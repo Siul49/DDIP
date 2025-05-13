@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import {useEffect, useState} from "react";
 
 export function Navs() {
@@ -18,8 +20,11 @@ export function Navs() {
                     transition-all duration-300 ${moving ? 'h-12 opacity-0 hover:h-20' : 'h-20 opacity-100 hover:shadow-2xl'}`}
             >
                 <button onClick={() => window.location.reload()}
-                        className="absolute object-cover w-32 left-3 text-center text-green-500 rounded-2xl cursor-pointer">
-                    <img src="/DDIP.png" alt="Home" className="w-32 inline-block"/>
+                        className="absolute w-32 left-3 text-center text-green-500 rounded-2xl cursor-pointer">
+                    <div className="w-32 h-12 left-3">
+                        <Image src="/DDIP.png" fill alt="Home" className="object-contain"/>
+                    </div>
+
                 </button>
 
                 <a className="absolute right-20 cursor-pointer text-black shadow-green-500 ">로그인/회원가입</a>
