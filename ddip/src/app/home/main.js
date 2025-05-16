@@ -26,30 +26,8 @@ export function Main() {
                         ))}
                     </div>
                 </div>
-
-                <p className={"absolute right-5 bottom-5"}></p>
             </div>
 
-            <h2 className={"absolute top-220 w-full font-bold text-3xl"}>카테고리</h2>
-            <div className={"absolute top-240 bg-gray-200 w-[75%] h-65 grid grid-cols-6 rounded-2xl"}>
-                {Array.from({ length: 6 }).map((_,index_category) => (
-                    <div key={index_category} className="relative w-full h-full">
-                        <Image src={'/testimage.png'} fill
-                               className=" w-full h-full p-4 object-contain hover:bg-gray-300 select-transition" alt="이미지"/>
-                    </div>
-
-                ))}
-         </div>
-
-            <h2 className={"absolute top-320 w-full font-bold text-3xl"}>마감 직전 상품 목록</h2>
-            <div className={"absolute top-340 bg-gray-200 w-[75%] h-65 grid grid-cols-6 rounded-2xl"}>
-                {Array.from({ length: 6 }).map((_, index2) => (
-                    <div key={index2} className="relative w-full h-full">
-                        <Image src={'/testimage.png'} fill
-                               className=" w-full h-full p-4 object-contain hover:bg-gray-300 select-transition" alt="이미지"/>
-                    </div>
-                ))}
-            </div>
         </div>
     )
 }

@@ -1,11 +1,13 @@
 @import "tailwindcss";
 
+
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .searchslot{
-  @apply text-center rounded-full bg-white
+  @apply text-center rounded-full bg-[#FFFCED]
   shadow-green-500 hover:shadow-xl
   transition-shadow duration-250 ease-out;
 }

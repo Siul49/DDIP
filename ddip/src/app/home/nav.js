@@ -16,7 +16,7 @@ export function Navs() {
     return (
         <>
             <nav
-                    className={`fixed top-0 left-0 right-0 z-50 bg-white shadow-lg flex items-center justify-center hover:opacity-100
+                    className={`fixed top-0 left-0 right-0 z-50 bg-[#FFFCED] shadow-lg flex items-center justify-center hover:opacity-100
                     transition-all duration-300 ${moving ? 'h-12 opacity-0 hover:h-20' : 'h-20 opacity-100 hover:shadow-2xl'}`}
             >
                 <button onClick={() => window.location.reload()}
