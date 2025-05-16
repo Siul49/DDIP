@@ -17,14 +17,7 @@ export function Main() {
                 </div>
 
                 <div className={"absolute bg-gray-20 w-[75%] h-8 bottom-8 rounded-2xl"}>
-                    <div className={"absolute w-full h-full grid grid-cols-10 gap-x-15 items-center justify-center"}>
-                        {Array.from({ length: 10 }).map((_, index) => (
-                            <button
-                                key={index}
-                                className="min-w-16 w-full h-10 bg-gray-500 hover:bg-gray-400 rounded-full select-transition"
-                            ></button>
-                        ))}
-                    </div>
+
                 </div>
             </div>
 

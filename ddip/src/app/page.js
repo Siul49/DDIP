@@ -22,7 +22,7 @@ export default function Home() {
         {mode === 'home' && (
             <>
                 <Main />
-                <div className="h-32 bg-[#FFFCED]" />
+                <div className="h-32 cdbg-[#FFFCED]" />
                 <Category onSelect={(index) => {
                     setSelectedCategory(index);
                     setMode('category');
