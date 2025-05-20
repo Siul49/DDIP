@@ -56,7 +56,7 @@ export default function Home() {
 
         {mode === 'product' && (
             <>
-                <Item onSelect={setSelectedProduct} />
+                <Item onSelect={selectedProduct} />
             </>
         )}
 
