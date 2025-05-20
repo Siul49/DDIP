@@ -2,8 +2,13 @@ import Image from 'next/image';
 
 import {useEffect, useState} from "react";
 
-export function Navs() {
+export function Navs({onSelect}) {
     const [moving,setMoved] = useState(false);
+    const [activeIndex, setActiveIndex] = useState(null);
+    const handleClick = (selected_index) => {
+        setActiveIndex(selected_index);
+        if (onSelect) onSelect(selected_index);
+    };
 
     useEffect(() => {
         const scrolled = () => {
@@ -27,7 +32,14 @@ export function Navs() {
 
                 </button>
 
-                <a className="absolute right-20 cursor-pointer text-black shadow-green-500 ">로그인/회원가입</a>
+                <button
+                    onClick={() => {
+                        if (onSelect) onSelect('sign');  // 예: 'sign' 모드로 바꾸기
+                    }}
+                    className="absolute right-20 cursor-pointer text-black shadow-green-500"
+                >
+                    로그인/회원가입
+                </button>
 
                 <div
                     className="absolute w-12 h-12 right-5 bg-green-500 border-black border-4 rounded-full cursor-pointer"></div>
