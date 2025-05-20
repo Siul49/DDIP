@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import {useState} from "react";
+import ingredient_lists from '@constants/categoryDB';
+
 
 export function Products({onSelect}) {
     const [activeIndex, setActiveIndex] = useState(null);
@@ -8,21 +10,20 @@ export function Products({onSelect}) {
         if (onSelect) onSelect(selected_index);
     };
     return (
-        <section className="relative w-full h-full bg-[#FFFCED] flex justify-center text-center">
+        <section className="relative w-full h-full  flex justify-center text-center">
 
-            <h2 className={"absolute w-full font-bold text-3xl text-center"}>상품 목록</h2>
-            <div className={"absolute top-15 bg-gray-200 w-[65%] aspect-square grid grid-cols-4 grid-rows-4 rounded-2xl"}>
-                {Array.from({ length: 16 }).map((_, indexProduct) => (
-                    <button key={indexProduct} className="relative w-full aspect-square hover:bg-gray-300 select-transition p-4"
-                            onClick={() => handleClick(indexProduct+1)} >
-                        <div className={"relative w-full h-full"}>
+            <div className={"absolute top-15  w-[65%] aspect-square grid grid-cols-4 grid-rows-4 rounded-2xl"}>
+                {ingredient_lists.map(item => (
+                    <button key={item.key} className="relative  aspect-square hover:bg-gray-300/40 select-transition w-full h-full p-4 rounded-2xl"
+                            onClick={() => handleClick(item.key)} >
                             <Image
                                 src="/testimage.png"
                                 fill
-                                className="object-contain "
+                                className=" w-full h-full p-4 object-contain "
                                 alt="이미지"
                             />
-                        </div>
+                            <p className={"mt-50 z-50 text-2xl"}>{item.value}</p>
+
                         </button>
                 ))}
             </div>

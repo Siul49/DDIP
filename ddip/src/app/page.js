@@ -14,15 +14,13 @@ export default function Home() {
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [selectedProduct, setSelectedProduct] = useState(null);
 
-
     return (
-    <div className={'relative w-full h-full flex flex-col justify-center bg-[#FFFCED]'}>
+    <div className={'relative w-full h-full flex flex-col justify-center bg-[#FFFCED] text-center'}>
         <Navs/>
 
         {mode === 'home' && (
             <>
                 <Main />
-                <div className="h-32 cdbg-[#FFFCED]" />
                 <Category onSelect={(index) => {
                     setSelectedCategory(index);
                     setMode('category');
@@ -32,9 +30,12 @@ export default function Home() {
 
         {mode === 'category' && (
             <>
-                <div className="h-16 bg-[#FFFCED]"/>
-                <div className="w-[80%] mx-auto"><Category onSelect={setSelectedCategory} /></div>
-                <div className="h-108 bg-[#FFFCED]"/>
+                <div className="h-16"/>
+                <div className="w-[80%] mx-auto">
+                    <Category onSelect={setSelectedCategory} />
+                </div>
+                <div className="h-50"/>
+                <h1 className={"font-bold text-3xl"}>{selectedCategory}</h1>
                 <Products onSelect={(index) => {
                     setSelectedProduct(index);
                     setMode('product');
@@ -50,4 +51,6 @@ export default function Home() {
 
     </div>
     );
+
 }
+
