@@ -3,7 +3,9 @@
     "baseUrl": "src",
     "paths": {
       "@home/*": ["app/home/*"],
-      "@constants/*": ["constants/*"]
+      "@constants/*": ["constants/*"],
+      "@signup/*": ["app/signup/*"],
+      "@component/*": ["app/signup/component/*"]
     }
   }
 }
