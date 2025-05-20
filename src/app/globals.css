@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.searchslot{
+  @apply text-center rounded-full bg-[#FFFCED]
+  shadow-green-500 hover:shadow-xl
+  transition-shadow duration-250 ease-out;
+}
+
+.navbar{
+  @apply fixed w-full h-20 bg-[#FFFCED] flex items-center justify-center top-0 left-0 right-0 z-50 shadow-xl ;
+}
+
+.select-transition{
+  @apply transition-all duration-100 ease-linear cursor-pointer ;
+}
