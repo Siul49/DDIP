@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@home/*": ["app/home/*"],
+      "@constants/*": ["constants/*"]
+    }
+  }
+}
