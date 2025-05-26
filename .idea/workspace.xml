@@ -4,7 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5c1661e-3bee-49a4-80e1-6f6d8299b2f7" name="변경" comment="이 release 0.1 브렌치에 푸시를 할거에요&#10;여기서 브렌치를 기능별로 만들고 이 구조를 해치지 않는 선에서 푸시해주세요 또한 구조를 변경해야할 일이 있다면 꼬오오옥 말씀해주세요 규칙을 지켜야 같이 일할 때 서로의 코드를 보고 이해하고 수정하기 쉬워지니까!" />
+    <list default="true" id="b5c1661e-3bee-49a4-80e1-6f6d8299b2f7" name="변경" comment="release 0.1 입니다 여기서 브렌치 파서 작업해주세요">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ddip/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ddip/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ddip/eslint.config.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ddip/jsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ddip/next.config.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ddip/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ddip/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ddip/postcss.config.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ddip/public/DDIP.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ddip/public/file.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ddip/public/globe.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ddip/public/next.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ddip/public/smolDDIP.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ddip/public/testimage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ddip/public/textured-paper.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ddip/public/vercel.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ddip/public/window.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ddip/src/app/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ddip/src/app/globals.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ddip/src/app/home/category.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ddip/src/app/home/item.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ddip/src/app/home/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ddip/src/app/home/nav.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ddip/src/app/home/products.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ddip/src/app/layout.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ddip/src/app/page.js" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,24 +76,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "release-0.1",
-    "js.debugger.nextJs.config.created.client": "true",
-    "js.debugger.nextJs.config.created.server": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.Next.js: 서버 측.executor": "Run",
-    "ts.external.directory.path": "C:\\Users\\kksu1\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;release-0.1&quot;,
+    &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
+    &quot;js.debugger.nextJs.config.created.server&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.Next.js: 서버 측.executor&quot;: &quot;Run&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\kksu1\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\kksu1\OneDrive\바탕 화면\KKS\SOONGSIL_UNIV\3-1\웹플밍\DDIP\src\app\components\common" />
@@ -116,6 +144,9 @@
       <workItem from="1747884273618" duration="1175000" />
       <workItem from="1748234698089" duration="10000" />
       <workItem from="1748238279836" duration="2439000" />
+      <workItem from="1748240770946" duration="660000" />
+      <workItem from="1748242907345" duration="366000" />
+      <workItem from="1748258472574" duration="905000" />
     </task>
     <task id="LOCAL-00001" summary="이 release 0.1 브렌치에 푸시를 할거에요&#10;여기서 브렌치를 기능별로 만들고 이 구조를 해치지 않는 선에서 푸시해주세요 또한 구조를 변경해야할 일이 있다면 꼬오오옥 말씀해주세요 규칙을 지켜야 같이 일할 때 서로의 코드를 보고 이해하고 수정하기 쉬워지니까!">
       <option name="closed" value="true" />
@@ -133,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748240665569</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="release 0.1 입니다 여기서 브렌치 파서 작업해주세요">
+      <option name="closed" value="true" />
+      <created>1748240820720</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1748240820720</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,6 +218,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="이 release 0.1 브렌치에 푸시를 할거에요&#10;여기서 브렌치를 기능별로 만들고 이 구조를 해치지 않는 선에서 푸시해주세요 또한 구조를 변경해야할 일이 있다면 꼬오오옥 말씀해주세요 규칙을 지켜야 같이 일할 때 서로의 코드를 보고 이해하고 수정하기 쉬워지니까!" />
-    <option name="LAST_COMMIT_MESSAGE" value="이 release 0.1 브렌치에 푸시를 할거에요&#10;여기서 브렌치를 기능별로 만들고 이 구조를 해치지 않는 선에서 푸시해주세요 또한 구조를 변경해야할 일이 있다면 꼬오오옥 말씀해주세요 규칙을 지켜야 같이 일할 때 서로의 코드를 보고 이해하고 수정하기 쉬워지니까!" />
+    <MESSAGE value="release 0.1 입니다 여기서 브렌치 파서 작업해주세요" />
+    <option name="LAST_COMMIT_MESSAGE" value="release 0.1 입니다 여기서 브렌치 파서 작업해주세요" />
   </component>
 </project>
