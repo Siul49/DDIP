@@ -53,7 +53,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "realese-0.1",
+    "git-widget-placeholder": "release-0.1",
     "js.debugger.nextJs.config.created.client": "true",
     "js.debugger.nextJs.config.created.server": "true",
     "node.js.detected.package.eslint": "true",
@@ -115,7 +115,7 @@
       <workItem from="1747881211144" duration="1224000" />
       <workItem from="1747884273618" duration="1175000" />
       <workItem from="1748234698089" duration="10000" />
-      <workItem from="1748238279836" duration="2216000" />
+      <workItem from="1748238279836" duration="2439000" />
     </task>
     <task id="LOCAL-00001" summary="이 release 0.1 브렌치에 푸시를 할거에요&#10;여기서 브렌치를 기능별로 만들고 이 구조를 해치지 않는 선에서 푸시해주세요 또한 구조를 변경해야할 일이 있다면 꼬오오옥 말씀해주세요 규칙을 지켜야 같이 일할 때 서로의 코드를 보고 이해하고 수정하기 쉬워지니까!">
       <option name="closed" value="true" />
@@ -125,7 +125,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748240107839</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="이 release 0.1 브렌치에 푸시를 할거에요&#10;여기서 브렌치를 기능별로 만들고 이 구조를 해치지 않는 선에서 푸시해주세요 또한 구조를 변경해야할 일이 있다면 꼬오오옥 말씀해주세요 규칙을 지켜야 같이 일할 때 서로의 코드를 보고 이해하고 수정하기 쉬워지니까!">
+      <option name="closed" value="true" />
+      <created>1748240665569</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1748240665569</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,7 +165,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="realese-0.1" />
+                        <option value="release-0.1" />
                       </list>
                     </value>
                   </entry>
