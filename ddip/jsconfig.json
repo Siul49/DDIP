@@ -2,7 +2,10 @@
   "compilerOptions": {
     "baseUrl": "src",
     "paths": {
-      "@home/*": ["app/home/*"]
+      "@home/*": ["app/home/*"],
+      "@constants/*": ["constants/*"],
+      "@signup/*": ["app/signup/*"],
+      "@component/*": ["app/signup/component/*"]
     }
   }
 }
