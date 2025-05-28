@@ -25,3 +25,7 @@ body {
 .select-transition{
   @apply transition-all duration-100 ease-linear cursor-pointer ;
 }
+
+button {
+  cursor: pointer;
+}
