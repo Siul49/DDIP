@@ -1,12 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import Navs from '@components/common/nav.js';
+import Navs from '@components/common/nav';
 import Main from '@home/index';
 import Category from '@home/components/category-form';
 import ItemList from '@home/components/item-list';
 import ItemExplain from '@home/components/item-explain';
 import SignUp from '@auth/index';
+import Shortcut from '@components/common/shortcut';
 
 
 
@@ -23,6 +24,7 @@ export default function Home() {
                 setSign(index);
                 setMode('sign');
             }}/>
+            <Shortcut/>
             {mode === 'sign' &&(
                 <>
                     <SignUp/>
