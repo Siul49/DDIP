@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@home/*": ["app/feature/home/*"],
+      "@constants/*": ["constants/*"],
+      "@auth/*": ["app/feature/auth/*"],
+      "@components/*": ["app/components/*"]
+    }
+  }
+}

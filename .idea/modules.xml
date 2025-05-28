@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/DDIP.iml" filepath="$PROJECT_DIR$/.idea/DDIP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ddip.iml" filepath="$PROJECT_DIR$/.idea/ddip.iml" />
     </modules>
   </component>
 </project>
