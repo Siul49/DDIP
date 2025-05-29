@@ -4,98 +4,55 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5d6a845-d7f4-47f0-b14b-29de60ee74da" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/fonts/PretendardVariable.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/feature/auth/components/agreement.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/feature/auth/components/input.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/feature/auth/components/signup-form.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/feature/auth/components/validate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/feature/home/components/item-explain.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/feature/home/components/item-list.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/util/chat.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/util/socket.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/mongodb.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/DDIP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ddip.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="e5d6a845-d7f4-47f0-b14b-29de60ee74da" name="Changes" comment="뒤로가기 앞으로 가기 할 수 있게 페이지 리펙토링">
+      <change afterPath="$PROJECT_DIR$/src/app/feature/auth/api/signup/signup-api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/feature/category/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/eslint.config.mjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/jsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/next.config.mjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/postcss.config.mjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/public/categoryImg/deliver.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/public/categoryImg/donate.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/public/categoryImg/ingredient.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/public/categoryImg/instant.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/public/categoryImg/large.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/public/categoryImg/stuffs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/public/fonts/PretendardVariable.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/public/images/icons/file.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/public/images/icons/globe.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/public/images/logos/DDIP.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/public/images/logos/smolDDIP.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/public/next.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/public/testimage.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/public/textured-paper.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/public/vercel.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/public/window.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/src/app/component/category-form.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/src/app/component/chat-form.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/src/app/component/writing-form.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/src/app/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/src/app/feature/api/model/user.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/src/app/feature/auth/api/auth-api.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/src/app/feature/auth/components/login-form.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/src/app/feature/auth/components/sign-in.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/src/app/feature/auth/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/src/app/feature/profile/components/info-sidebar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/src/app/feature/profile/components/my-info-form.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/src/app/feature/profile/components/my-sidebar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/src/app/feature/profile/components/myproduct-managing-form.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/src/app/globals.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/src/app/home/category.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/src/app/home/item.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/src/app/home/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/src/app/home/nav.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/src/app/home/products.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/src/app/layout.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/src/app/page.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/src/app/pages/logout.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/src/app/pages/mypage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/src/app/signup/component/Agreement.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/src/app/signup/component/Input.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/src/app/signup/component/SignupForm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/src/app/signup/component/Validate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/src/app/signup/signpage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/src/constants/categoryDB.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddip/src/constants/simpleDB.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eslint.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/eslint.config.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/jsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-container/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-container/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-container/eslint.config.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-container/jsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-container/next.config.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-container/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-container/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-container/postcss.config.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-container/public/file.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-container/public/globe.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-container/public/next.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-container/public/vercel.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-container/public/window.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-container/src/app/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-container/src/app/globals.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-container/src/app/layout.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-container/src/app/page.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/postcss.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/postcss.config.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/common/nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/common/nav.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/feature/auth/components/sign-in.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/feature/auth/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/feature/auth/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/feature/home/components/category-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/feature/home/components/category-form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/feature/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/feature/home/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/route.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/common/footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/common/nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/nav.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/feature/auth/api/auth-api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/writing-api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/feature/auth/components/agreement.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/feature/auth/components/agreement.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/feature/auth/components/login-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/feature/auth/components/login-form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/feature/auth/components/signup-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/feature/auth/components/signup-form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/feature/auth/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/feature/auth/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/feature/home/components/category-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/feature/category/components/category-form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/feature/home/components/chat-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/chat-form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/feature/home/components/item-explain.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pruduct/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/feature/home/components/item-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/item-list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/feature/home/components/writing-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/writing-form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/feature/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/home/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/feature/profile/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/feature/profile/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/feature/user/api/user-api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/user/api/user-api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/feature/user/model/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/user/model/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/util/database.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/categoryDB.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/categoryDB.js" afterDir="false" />
     </list>
     <list id="a019c806-4293-46f6-9a88-704590647923" name="Changes by dokkk0dahee" comment="" />
-    <list id="e203547a-a1c8-4849-b46c-a730e29da9c3" name="Changes by kksu1" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/util/database.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/feature/auth/api/auth-api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/feature/auth/api/auth-api.js" afterDir="false" />
-    </list>
-    <list id="0db04d73-ef62-4e46-9f19-36c9b3b346c7" name="Changes by Yunwoo" comment="">
-      <change beforePath="$PROJECT_DIR$/src/app/feature/auth/components/login-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/feature/auth/components/login-form.js" afterDir="false" />
-    </list>
+    <list id="e203547a-a1c8-4849-b46c-a730e29da9c3" name="Changes by kksu1" comment="" />
+    <list id="0db04d73-ef62-4e46-9f19-36c9b3b346c7" name="Changes by Yunwoo" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -109,6 +66,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="fillincode" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -117,12 +79,12 @@
     &quot;assignee&quot;: &quot;ArgX2&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Siul49/DDIP.git&quot;,
-    &quot;accountId&quot;: &quot;72c675de-739d-426a-b925-26941b57e4d3&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Siul49/DDIP.git",
+    "accountId": "46fa2197-b540-4c7c-932e-4dd35f36af8a"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -139,7 +101,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "fillincode",
+    "git-widget-placeholder": "refactory",
     "js.debugger.nextJs.config.created.client": "true",
     "js.debugger.nextJs.config.created.server": "true",
     "last_opened_file_path": "C:/Users/pkpk0/WebstormProjects/ddip/public/fonts",
@@ -147,7 +109,8 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Users\\pkpk0\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "npm.Next.js: server-side.executor": "Run",
+    "ts.external.directory.path": "C:\\Users\\kksu1\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -160,11 +123,11 @@
       <recent name="C:\Users\pkpk0\WebstormProjects\DDIP" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\pkpk0\WebstormProjects\ddip\src\app\feature\home\components" />
-      <recent name="C:\Users\pkpk0\WebstormProjects\ddip\src\app\components" />
-      <recent name="C:\Users\pkpk0\WebstormProjects\DDIP\src\app\feature\auth\components" />
-      <recent name="C:\Users\pkpk0\WebstormProjects\DDIP\src\app\feature\auth" />
-      <recent name="C:\Users\pkpk0\WebstormProjects\DDIP" />
+      <recent name="C:\Users\kksu1\OneDrive\바탕 화면\KKS\SOONGSIL_UNIV\3-1\웹플밍\DDIP\src\app\api" />
+      <recent name="C:\Users\kksu1\OneDrive\바탕 화면\KKS\SOONGSIL_UNIV\3-1\웹플밍\DDIP\src\app\feature\auth\api\signup" />
+      <recent name="C:\Users\kksu1\OneDrive\바탕 화면\KKS\SOONGSIL_UNIV\3-1\웹플밍\DDIP\src\app\pruduct\components" />
+      <recent name="C:\Users\kksu1\OneDrive\바탕 화면\KKS\SOONGSIL_UNIV\3-1\웹플밍\DDIP\src\app\pruduct" />
+      <recent name="C:\Users\kksu1\OneDrive\바탕 화면\KKS\SOONGSIL_UNIV\3-1\웹플밍\DDIP\src\app\components" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Next.js: server-side">
@@ -185,7 +148,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-WS-251.23774.424" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-WS-251.25410.117" />
       </set>
     </attachedChunks>
   </component>
@@ -200,6 +163,7 @@
       <workItem from="1748319543834" duration="375000" />
       <workItem from="1748340397909" duration="2097000" />
       <workItem from="1748342529373" duration="7019000" />
+      <workItem from="1748414693966" duration="33500000" />
     </task>
     <servers />
   </component>
@@ -216,5 +180,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="뒤로가기 앞으로 가기 할 수 있게 페이지 리펙토링" />
+    <option name="LAST_COMMIT_MESSAGE" value="뒤로가기 앞으로 가기 할 수 있게 페이지 리펙토링" />
   </component>
 </project>

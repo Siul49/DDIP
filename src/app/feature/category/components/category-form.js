@@ -1,14 +1,10 @@
 import Image from 'next/image'
-import { useState } from 'react';
 import category_lists from '@constants/simpleDB';
-console.log(category_lists);
 
-export default function Category({onSelect}) {
+export default function Category({setSelectedCategory}) {
 
-    const [activeIndex, setActiveIndex] = useState(null);
-    const handleClick = (selected_index) => {
-        setActiveIndex(selected_index);
-        if (onSelect) onSelect(selected_index);
+    const handleClick = (categoryValue) => {
+        setSelectedCategory(categoryValue);
     };
     return (
         <section className="relative w-full flex flex-col items-center justify-center">

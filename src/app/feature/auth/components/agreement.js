@@ -1,4 +1,4 @@
-// components/AgreementBox.jsx
+// [id]/AgreementBox.jsx
 export default function AgreementBox({ agreed, onChange }) {
     return (<div>
         <h2 className="text-center text-[20px] font-semibold mb-2">개인정보 제공 동의</h2>

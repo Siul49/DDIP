@@ -1,9 +1,13 @@
-import Image from 'next/image'
+
+import Navs from "@components/nav";
+import Category from "../feature/category/components/category-form";
+import Image from "next/image";
 
 export default function Main() {
 
     return (
-        <div className={"relative w-full h-full bg-[#FFFCED] flex justify-center text-center"}>
+        <div className={"flex flex-col w-full h-full bg-[#FFFCED] justify-center text-center"}>
+            <Navs/>
             <div className="relative top-0 w-full h-[80vh] bg-[url(/textured-paper.png)] flex justify-center">
                 <div className="absolute inset-0 bg-lime-500/30 mix-blend-multiply" />
                 <div className="absolute w-[50%] h-[40%] top-[20%]" >
@@ -16,11 +20,9 @@ export default function Main() {
                         SEARCH</button>
                 </div>
 
-                <div className={"absolute bg-gray-20 w-[75%] h-8 bottom-8 rounded-2xl"}>
-
-                </div>
+                <div className={"absolute bg-gray-20 w-[75%] h-8 bottom-8 rounded-2xl"}></div>
             </div>
-
+            <Category />
         </div>
     )
 }

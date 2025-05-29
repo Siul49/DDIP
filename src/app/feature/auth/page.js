@@ -1,7 +1,7 @@
 // 'use client';
 //
-// import SignupForm from './components/signup-form.js';
-// import LoginForm from './components/login-form.js';
+// import SignupForm from './[id]/signup-form.js';
+// import LoginForm from './[id]/login-form.js';
 // import Image from 'next/image';
 //
 // /*
@@ -36,8 +36,7 @@
 'use client';
 
 import SignupForm from './components/signup-form';
-import Navs from '@components/common/nav.js';
-import Image from 'next/image';
+import Navs from '@components/nav.js';
 import LoginForm from "./components/login-form";
 import { useState } from "react";
 
@@ -45,19 +44,27 @@ export default function SignUp() {
     const [status, changeStatus] = useState(false);
 
     return (
-        <div className="w-full h-full flex flex-col items-center bg-[#FFFEF]">
+        <div className="relative w-full h-full flex flex-col items-center bg-[#FFFEF]">
             <Navs />
 
-            <div className="flex flex-col items-center w-[660px] h-full mt-[30px] mb-[100px]
+            <div className="flex flex-col items-center w-[660px] h-full mt-[150px] mb-[100px]
                 rounded-[30px] opacity-70 bg-[#FFFEF6] shadow-[0px_0px_40px_0px_#D9D9D9]">
 
-                {status ? <SignupForm /> : <LoginForm />}
+                {status
+                    ? <SignupForm changeStatus={changeStatus} />
+                    : <LoginForm />
+                }
+
+                {/*
+                비밀번호 찾기, 아이디 찾기 구현
+                이메일로 코드 보내고 인증 같은 절차 구현
+                */}
 
                 <button
                     onClick={() => changeStatus(!status)}
-                    className="mt-4 text-blue-500 underline"
+                    className="mb-3 text-blue-500 underline"
                 >
-                    {status ? '로그인으로 돌아가기' : '회원가입?'}
+                    {status ? '로그인으로 돌아가기' : '회원가입'}
                 </button>
             </div>
         </div>

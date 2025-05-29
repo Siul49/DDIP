@@ -21,7 +21,7 @@ export default function LoginForm() {
     };
 
     return (
-        <div>
+        <div className="flex flex-col max-w-[420px] justify-items-center " style={{ paddingTop: '100px' }}>
         <Image
             src="/DDIP.png"
             alt="log"
