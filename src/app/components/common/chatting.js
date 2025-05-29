@@ -1,34 +1,66 @@
 // chatting.js
-import { useState, useEffect, useRef } from "react";
+import {useState, useEffect, useRef} from "react";
 import Image from "next/image";
 
-export default function ChatBox({ onClose }) {
+export default function ChatBox({onClose}) {
     const [messages, setMessages] = useState([]);
     const [input, setInput] = useState("");
     const messagesEndRef = useRef(null);  //스크롤 위치 제일 아래로
 
-    //메세지 저장
+    //리엑트에서 컴포넌트가 화면에 처음 나타나는 순간(컴포넌트 마운트)에 로컬스토리지에서 불러오기
+    useEffect(() => {
+        const stored = localStorage.getItem("chatMessages");
+        if (stored) {
+            setMessages(JSON.parse(stored));
+        }
+    }, [])
+
+    //메세지 보내기
     const handleSend = () => {
         if (input.trim() === "") return;
-        setMessages([...messages, { id: Date.now(), text: input }]);
+
+        //본인 (보내는 사람) -> 로그인&회원가입에서 받은 정보를 바탕으로 수정
+        const newMessage = {
+            id: Date.now(),
+            text: input,
+            sender: "me",
+            name: "나",  //별명
+            time: new Date().toLocaleTimeString([], {hour: "2-digit", minute: "2-digit"})
+        };
+
+        const updatedMessages = [...messages, newMessage];
+
+        //예시 메세지 (보낸 사람) -> 로그인&회원가입에서 받은 정보를 바탕으로 수정
+        const autoReply = {
+            id: Date.now() + 1,
+            text: "고구마 10개 사고 싶습니다!",
+            sender: "other",  //상대 메세지
+            name: "고구미",
+            time: new Date().toLocaleTimeString([], {hour: "2-digit", minute: "2-digit"})
+        };
+
+        const finalMessage = [...updatedMessages, autoReply];
+
+        setMessages(finalMessage);
+        localStorage.setItem("chatMessages", JSON.stringify(finalMessage));
         setInput("");
     };
 
     //messages가 변경될 때마다 스크롤을 밑으로 이동
     useEffect(() => {
         if (messagesEndRef.current) {
-            messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+            messagesEndRef.current.scrollIntoView({behavior: "smooth"});
         }
     }, [messages]);
 
 
     return (
-        <div className="fixed bottom-[20px] right-[80px] w-[350px] h-[500px] bg-white
+        <div className="fixed bottom-[20px] right-[80px] w-[350px] h-[550px] bg-white
                         rounded-[20px] border-[2px] border-[#FEB162] z-100 flex flex-col">
             {/* 상단 */}
             <div className="flex items-center h-[50px] px-[15px] border-b-[2px] border-[#FEB162] gap-[10px]">
                 <button onClick={onClose} className="w-[20px] h-[20px] relative">
-                    <Image src="/chat-back.svg" fill alt="chat-back" />
+                    <Image src="/chat-back.svg" fill alt="chat-back"/>
                 </button>
                 {/*채팅명으로 바뀌어야해서 나중에 데이터 불러와야합니당*/}
                 <p className="text-[20px] font-semibold truncate">채팅</p>
@@ -37,15 +69,34 @@ export default function ChatBox({ onClose }) {
             {/* 채팅 부분 */}
             <div className="flex-1 overflow-y-auto p-3 h-64 custom-scrollbar">
                 {messages.map((msg) => (
-                    <div key={msg.id} className="mb-2 flex justify-end">
-                        <span className="max-w-[250px] bg-[#FADD88] px-[10px] py-[8px]
-                                        rounded-[10px] text-sm inline-block">
-                          {msg.text}
-                        </span>
+                    <div key={msg.id}
+                         className={`mb-[15px] flex ${msg.sender === "me" ? "justify-end" : "justify-start"}`}>
+
+                        <div className={`flex flex-col ${msg.sender === "me" ? "items-end" : "items-start"}`}>
+                            {/* 이름 (상대방 메시지일 때만 표시) */}
+                            {msg.sender !== "me" && (
+                                <span className="text-[14px] font-semibold ml-[2px] text-black mb-1">
+                                    {msg.name}
+                                </span>
+                            )}
+                            {/* 말풍선 + 시간*/}
+                            <div
+                                className={`flex items-end ${msg.sender === "me" ? "flex-row-reverse" : "flex-row"} gap-1`}>
+                                {/* 말풍선 */}
+                                <span className={`max-w-[250px] px-[10px] py-[8px] rounded-[12px] text-regular text-[14px] inline-block break-words
+                                ${msg.sender === "me" ? "bg-[#FADD88]" : "bg-white border-[1px] border-[#D9D9D9]"}`}>
+                                  {msg.text}
+                                </span>
+                                {/* 시간 */}
+                                <span className={"text-[10px] text-[#D0D0D0] mb-[3px]"}>
+                                    {msg.time}
+                                </span>
+                            </div>
+                        </div>
                     </div>
                 ))}
                 {/* 스크롤 제일 밑에 위치한 빈 div */}
-                <div ref={messagesEndRef} />
+                <div ref={messagesEndRef}/>
             </div>
 
             {/* 입력 부분 */}
@@ -62,7 +113,7 @@ export default function ChatBox({ onClose }) {
                 <button
                     onClick={handleSend}
                     className="w-[30px] h-[30px] relative"
-                ><Image src="/chat-send.svg" fill alt="chat-send" />
+                ><Image src="/chat-send.svg" fill alt="chat-send"/>
                 </button>
             </div>
         </div>
