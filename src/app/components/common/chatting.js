@@ -2,7 +2,7 @@
 import {useState, useEffect, useRef} from "react";
 import Image from "next/image";
 
-export default function ChatBox({onClose}) {
+export default function Chatting({onClose}) {
     const [messages, setMessages] = useState([]);
     const [input, setInput] = useState("");
     const messagesEndRef = useRef(null);  //스크롤 위치 제일 아래로

@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import ChatBox from './chatting';
+import Chatting from './chatting';
 import {useEffect, useState} from "react";
 
 export default function Shortcut({}) {
@@ -15,7 +15,7 @@ export default function Shortcut({}) {
                 onClick={toggleChat}
             ><Image src="/chat.png" fill alt="chat" className="object-contain p-2"/>
             </button>
-            {isOpen && <ChatBox onClose={toggleChat} />}
+            {isOpen && <Chatting onClose={toggleChat} />}
 
             <button
                 className="fixed bottom-20 right-5 p-6 bg-[#FADD88] text-white rounded-full transition z-50
