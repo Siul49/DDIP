@@ -2,18 +2,16 @@
 import {useState, useEffect, useRef} from "react";
 import Image from "next/image";
 
-export default function Chatting({onClose}) {
+export default function Chatting({chatId, name, profileImg, onClose}) {
     const [messages, setMessages] = useState([]);
     const [input, setInput] = useState("");
     const messagesEndRef = useRef(null);  //스크롤 위치 제일 아래로
 
     //리엑트에서 컴포넌트가 화면에 처음 나타나는 순간(컴포넌트 마운트)에 로컬스토리지에서 불러오기
     useEffect(() => {
-        const stored = localStorage.getItem("chatMessages");
-        if (stored) {
-            setMessages(JSON.parse(stored));
-        }
-    }, [])
+        const stored = localStorage.getItem(`chatMessages-${chatId}`);
+        if (stored) setMessages(JSON.parse(stored));
+        }, [chatId]);
 
     //메세지 보내기
     const handleSend = () => {
@@ -39,10 +37,10 @@ export default function Chatting({onClose}) {
             time: new Date().toLocaleTimeString([], {hour: "2-digit", minute: "2-digit"})
         };
 
-        const finalMessage = [...updatedMessages, autoReply];
+        const finalMessages = [...messages, newMessage, autoReply];
 
-        setMessages(finalMessage);
-        localStorage.setItem("chatMessages", JSON.stringify(finalMessage));
+        setMessages(finalMessages);
+        localStorage.setItem(`chatMessages-${chatId}`, JSON.stringify(finalMessages));
         setInput("");
     };
 
@@ -62,8 +60,7 @@ export default function Chatting({onClose}) {
                 <button onClick={onClose} className="w-[20px] h-[20px] relative">
                     <Image src="/chat-back.svg" fill alt="chat-back"/>
                 </button>
-                {/*채팅명으로 바뀌어야해서 나중에 데이터 불러와야합니당*/}
-                <p className="text-[20px] font-semibold truncate">채팅</p>
+                <p className="text-[20px] font-semibold truncate">{name}</p>
             </div>
 
             {/* 채팅 부분 */}
@@ -80,8 +77,7 @@ export default function Chatting({onClose}) {
                                 </span>
                             )}
                             {/* 말풍선 + 시간*/}
-                            <div
-                                className={`flex items-end ${msg.sender === "me" ? "flex-row-reverse" : "flex-row"} gap-1`}>
+                            <div className={`flex items-end ${msg.sender === "me" ? "flex-row-reverse" : "flex-row"} gap-1`}>
                                 {/* 말풍선 */}
                                 <span className={`max-w-[250px] px-[10px] py-[8px] rounded-[12px] text-regular text-[14px] inline-block break-words
                                 ${msg.sender === "me" ? "bg-[#FADD88]" : "bg-white border-[1px] border-[#D9D9D9]"}`}>
