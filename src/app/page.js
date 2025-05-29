@@ -48,7 +48,6 @@
                             <Category onSelect={setSelectedCategory} />
                         </div>
                         <div className="h-50"/>
-                        <h1 className={"font-bold text-3xl"}>{selectedCategory}</h1>
                         <ItemList selectedCategoryValue={selectedCategory}
                             onSelect={(productID) => {
                             setSelectedProduct(productID);

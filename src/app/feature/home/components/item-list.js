@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import SimpleDB from "@constants/simpleDB";
 
 export default function ItemList({ selectedCategoryValue, onSelect }) {
     const [items, setItems] = useState([]);
@@ -33,6 +34,14 @@ export default function ItemList({ selectedCategoryValue, onSelect }) {
 
     return (
         <section className="relative w-full h-full flex justify-center text-center">
+            <h1 className="font-bold text-3xl">
+                {
+                    selectedCategoryValue
+                        ? (SimpleDB.find(cat => cat.value === selectedCategoryValue)?.name || '알 수 없음')
+                        : '전체 항목'
+                }
+            </h1>
+
             <div className="absolute top-15 w-[65%] aspect-square grid grid-cols-4 grid-rows-4 rounded-2xl">
                 {filteredItems.map((item) => (
                     <button
