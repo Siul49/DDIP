@@ -41,7 +41,7 @@ import LoginForm from "./components/login-form";
 import { useState } from "react";
 
 export default function SignUp() {
-    const [status, changeStatus] = useState(false);
+    const [status, setStatus] = useState(false);
 
     return (
         <div className="relative w-full h-full flex flex-col items-center bg-[#FFFEF]">
@@ -51,7 +51,7 @@ export default function SignUp() {
                 rounded-[30px] opacity-70 bg-[#FFFEF6] shadow-[0px_0px_40px_0px_#D9D9D9]">
 
                 {status
-                    ? <SignupForm changeStatus={changeStatus} />
+                    ? <SignupForm changeStatus={setStatus} />
                     : <LoginForm />
                 }
 
@@ -61,7 +61,7 @@ export default function SignUp() {
                 */}
 
                 <button
-                    onClick={() => changeStatus(!status)}
+                    onClick={() => setStatus(!status)}
                     className="mb-3 text-blue-500 underline"
                 >
                     {status ? '로그인으로 돌아가기' : '회원가입'}

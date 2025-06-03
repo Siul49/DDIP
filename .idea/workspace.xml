@@ -5,50 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5d6a845-d7f4-47f0-b14b-29de60ee74da" name="Changes" comment="뒤로가기 앞으로 가기 할 수 있게 페이지 리펙토링">
-      <change afterPath="$PROJECT_DIR$/src/app/feature/auth/api/signup/signup-api.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/feature/category/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/api/route.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/feature/auth/api/login/route.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-container/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-container/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-container/eslint.config.mjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-container/jsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-container/next.config.mjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-container/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-container/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-container/postcss.config.mjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-container/public/file.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-container/public/globe.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-container/public/next.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-container/public/vercel.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-container/public/window.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-container/src/app/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-container/src/app/globals.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-container/src/app/layout.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-container/src/app/page.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/route.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/common/footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/common/nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/nav.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/feature/auth/api/auth-api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/writing-api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/feature/auth/components/agreement.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/feature/auth/components/agreement.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/item-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/item-list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/feature/auth/api/signup/signup-api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/feature/auth/api/signup/route.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/feature/auth/components/login-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/feature/auth/components/login-form.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/feature/auth/components/signup-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/feature/auth/components/signup-form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/feature/auth/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/feature/auth/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/feature/home/components/category-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/feature/category/components/category-form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/feature/home/components/chat-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/chat-form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/feature/home/components/item-explain.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pruduct/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/feature/home/components/item-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/item-list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/feature/home/components/writing-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/writing-form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/feature/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/home/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/feature/profile/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/feature/profile/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/feature/user/api/user-api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/user/api/user-api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/feature/user/model/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/user/model/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/util/database.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/categoryDB.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/categoryDB.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/feature/auth/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/feature/auth/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/feature/category/components/category-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/feature/category/components/category-form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/feature/category/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/feature/category/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/home/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/home/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/pruduct/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pruduct/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/user/api/user-api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/items.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/user/model/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/user/model/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/mongodb.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/mongodb.js" afterDir="false" />
     </list>
     <list id="a019c806-4293-46f6-9a88-704590647923" name="Changes by dokkk0dahee" comment="" />
     <list id="e203547a-a1c8-4849-b46c-a730e29da9c3" name="Changes by kksu1" comment="" />
@@ -68,7 +43,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="fillincode" />
+        <entry key="$PROJECT_DIR$" value="724cc910e4cd24973683f90466d90e49ba390c54" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -79,12 +54,15 @@
     &quot;assignee&quot;: &quot;ArgX2&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Siul49/DDIP.git",
-    "accountId": "46fa2197-b540-4c7c-932e-4dd35f36af8a"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Siul49/DDIP.git&quot;,
+    &quot;accountId&quot;: &quot;46fa2197-b540-4c7c-932e-4dd35f36af8a&quot;
   }
-}]]></component>
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -96,24 +74,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "refactory",
-    "js.debugger.nextJs.config.created.client": "true",
-    "js.debugger.nextJs.config.created.server": "true",
-    "last_opened_file_path": "C:/Users/pkpk0/WebstormProjects/ddip/public/fonts",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.Next.js: server-side.executor": "Run",
-    "ts.external.directory.path": "C:\\Users\\kksu1\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JavaScript 디버그.Next.js: debug client-side.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;refactory&quot;,
+    &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
+    &quot;js.debugger.nextJs.config.created.server&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/pkpk0/WebstormProjects/ddip/public/fonts&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.Next.js: server-side.executor&quot;: &quot;Run&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\kksu1\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\pkpk0\WebstormProjects\ddip\public\fonts" />
@@ -123,11 +102,11 @@
       <recent name="C:\Users\pkpk0\WebstormProjects\DDIP" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kksu1\OneDrive\바탕 화면\KKS\SOONGSIL_UNIV\3-1\웹플밍\DDIP" />
+      <recent name="C:\Users\kksu1\OneDrive\바탕 화면\KKS\SOONGSIL_UNIV\3-1\웹플밍\DDIP\src" />
       <recent name="C:\Users\kksu1\OneDrive\바탕 화면\KKS\SOONGSIL_UNIV\3-1\웹플밍\DDIP\src\app\api" />
       <recent name="C:\Users\kksu1\OneDrive\바탕 화면\KKS\SOONGSIL_UNIV\3-1\웹플밍\DDIP\src\app\feature\auth\api\signup" />
       <recent name="C:\Users\kksu1\OneDrive\바탕 화면\KKS\SOONGSIL_UNIV\3-1\웹플밍\DDIP\src\app\pruduct\components" />
-      <recent name="C:\Users\kksu1\OneDrive\바탕 화면\KKS\SOONGSIL_UNIV\3-1\웹플밍\DDIP\src\app\pruduct" />
-      <recent name="C:\Users\kksu1\OneDrive\바탕 화면\KKS\SOONGSIL_UNIV\3-1\웹플밍\DDIP\src\app\components" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Next.js: server-side">
@@ -164,6 +143,8 @@
       <workItem from="1748340397909" duration="2097000" />
       <workItem from="1748342529373" duration="7019000" />
       <workItem from="1748414693966" duration="33500000" />
+      <workItem from="1748870437056" duration="31000" />
+      <workItem from="1748935179385" duration="8459000" />
     </task>
     <servers />
   </component>

@@ -1,14 +1,12 @@
 import Navs from "@components/nav";
 import ItemList from "@components/item-list";
 import {useState} from "react";
+import Category from "./components/category-form";
 
 
-export default function Category() {
-    const [sign, setSign] = useState(false);
-    const [selectedCategory, setSelectedCategory] = useState(null);
+export default function CategoryPage() {
+    const [selectedCategory, setSelectedCategory] = useState('');
     const [selectedProduct, setSelectedProduct] = useState(null);
-
-
 
     return(
         <div className={'relative w-full h-full flex flex-col justify-center bg-[#FFFCED] text-center'}>
@@ -21,7 +19,7 @@ export default function Category() {
             </div>
             <div className="h-50"/>
             <h1 className={"font-bold text-3xl"}>{selectedCategory}</h1>
-            <ItemList onSelect={setSelectedProduct} />
+            <ItemList category={selectedCategory} onSelect={setSelectedProduct} />
         </div>
     )
 }

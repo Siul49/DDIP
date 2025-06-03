@@ -4,7 +4,7 @@ import Input from './input';
 import AgreementBox from './agreement';
 import Image from "next/image";
 
-export default function SignupForm({changeStatus}) {
+export default function SignupForm({setStatus}) {
     const [agreed, setAgreed] = useState(false);
     const [form, setForm] = useState({
         userid: '',
@@ -41,7 +41,7 @@ export default function SignupForm({changeStatus}) {
             return setError("비밀번호가 일치하지 않습니다.");
         }
 
-        const response = await fetch("api/signup", {
+        const response = await fetch("/feature/auth/api/signup", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(form),
@@ -50,10 +50,10 @@ export default function SignupForm({changeStatus}) {
         const result = await response.json();
 
         if (result.success) {
-            alert('회원가입 성공');
-            changeStatus(true);
+            alert(result.message);
+            setStatus(true);
         } else {
-            setError('회원가입 실패');
+            alert(result.message);
         }
     };
 

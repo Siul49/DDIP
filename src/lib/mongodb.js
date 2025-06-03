@@ -1,28 +1,27 @@
-import { MongoClient } from 'mongodb'
+import mongoose from 'mongoose';
 
-const uri = process.env.MONGODB_URI
-const options = {}
-
-let client
-let clientPromise
+const uri = process.env.MONGODB_URI;
 
 if (!uri) {
-    throw new Error('Please add your Mongo URI to .env.local')
+    throw new Error('MONGODB_URI 환경 변수가 설정되지 않았습니다.');
 }
 
-if (process.env.NODE_ENV === 'development') {
-    if (!global._mongoClientPromise) {
-        console.log('🌱 Creating new MongoClient and connecting (dev mode)')
-        client = new MongoClient(uri, options)
-        global._mongoClientPromise = client.connect()
-    } else {
-        console.log('♻️ Reusing existing MongoClient promise (dev mode)')
+let cached = global.mongoose;
+if (!cached) {
+    cached = global.mongoose = { conn: null, promise: null };
+}
+
+async function dbConnect() {
+    if (cached.conn) {
+        return cached.conn;
     }
-    clientPromise = global._mongoClientPromise
-} else {
-    console.log('🚀 Creating new MongoClient and connecting (production mode)')
-    client = new MongoClient(uri, options)
-    clientPromise = client.connect()
+    if (!cached.promise) {
+        cached.promise = mongoose.connect(uri).then((mongoose) => {
+            return mongoose;
+        });
+    }
+    cached.conn = await cached.promise;
+    return cached.conn;
 }
 
-export default clientPromise
+export default dbConnect;

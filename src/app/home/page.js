@@ -1,7 +1,7 @@
-
 import Navs from "@components/nav";
 import Category from "../feature/category/components/category-form";
 import Image from "next/image";
+import Footer from "../components/footer";
 
 export default function Main() {
 
@@ -23,6 +23,7 @@ export default function Main() {
                 <div className={"absolute bg-gray-20 w-[75%] h-8 bottom-8 rounded-2xl"}></div>
             </div>
             <Category />
+            <Footer />
         </div>
     )
 }
