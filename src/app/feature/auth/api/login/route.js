@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import dbConnect from '../../../../../lib/mongodb';
-import User from '../../../../user/model/user';
+import mongoose from 'mongoose';
 import bcrypt from 'bcryptjs';
 
 export async function POST(request) {
@@ -16,7 +16,10 @@ export async function POST(request) {
 
         await dbConnect();
 
-        const user = await User.findOne({ userid });
+        const userDb = mongoose.connection.useDb('user');
+        const accountCollection = userDb.collection('account');
+
+        const user = await accountCollection.findOne({ userid });
         if (!user) {
             return NextResponse.json(
                 { success: false, message: '존재하지 않는 아이디입니다.' },

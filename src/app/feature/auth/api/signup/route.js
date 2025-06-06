@@ -7,8 +7,8 @@ export async function POST(request) {
 
         const client = await clientPromise; // 클라이언트 연결
 
-        const db = client.db('user');
-        const collection = db.collection('account');
+        const userDb = client.db('user');
+        const accountCollection = userDb.collection('account');
 
         const data = await request.json();
         const { userid, userpw, checkpw, username, name, phone, address, email } = data;
@@ -28,7 +28,7 @@ export async function POST(request) {
         }
 
         // 중복 체크
-        const existing = await collection.findOne({
+        const existing = await accountCollection.findOne({
             $or: [{ userid }, { email }]
         });
 
@@ -43,7 +43,7 @@ export async function POST(request) {
         const hashedPw = await bcrypt.hash(userpw, 10);
 
         // 데이터 삽입
-        await collection.insertOne({
+        await accountCollection.insertOne({
             userid,
             password: hashedPw,
             username,
