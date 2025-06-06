@@ -1,33 +1,20 @@
 import { NextResponse } from 'next/server';
-import dbConnect from '../../../../../lib/mongodb';
-import User from '../../../../user/model/user';
+import {clientPromise} from '../../../../../lib/mongodb'; // clientPromise로 변경
 import bcrypt from 'bcryptjs';
 
 export async function POST(request) {
     try {
-        const data = await request.json();
-        const {
-            userid,
-            userpw,
-            checkpw,
-            username,
-            name,
-            phone,
-            address,
-            email,
-        } = data;
 
-        // 필수값 체크
-        if (
-            !userid ||
-            !userpw ||
-            !checkpw ||
-            !username ||
-            !name ||
-            !phone ||
-            !address ||
-            !email
-        ) {
+        const client = await clientPromise; // 클라이언트 연결
+
+        const db = client.db('user');
+        const collection = db.collection('account');
+
+        const data = await request.json();
+        const { userid, userpw, checkpw, username, name, phone, address, email } = data;
+
+        // 필수값 체크 (기존 코드와 동일)
+        if (!userid || !userpw || !checkpw || !username || !name || !phone || !address || !email) {
             return NextResponse.json(
                 { success: false, message: '모든 빈칸을 채워주세요!' },
                 { status: 400 }
@@ -40,11 +27,11 @@ export async function POST(request) {
             );
         }
 
-        // DB 연결
-        await dbConnect();
-
         // 중복 체크
-        const existing = await User.findOne({ $or: [{ userid }, { email }] });
+        const existing = await collection.findOne({
+            $or: [{ userid }, { email }]
+        });
+
         if (existing) {
             return NextResponse.json(
                 { success: false, message: '이미 존재하는 아이디 또는 이메일입니다.' },
@@ -55,26 +42,28 @@ export async function POST(request) {
         // 비밀번호 암호화
         const hashedPw = await bcrypt.hash(userpw, 10);
 
-        // 유저 정보 저장
-        await User.create({
+        // 데이터 삽입
+        await collection.insertOne({
             userid,
             password: hashedPw,
             username,
             name,
             phone,
             address,
-            email
+            email,
+            createdAt: new Date()
         });
 
-        // 성공 응답
         return NextResponse.json(
-            { success: true },
+            { success: true, message: '회원가입이 완료되었습니다!' },
             { status: 201 }
         );
+
+
     } catch (error) {
-        console.error(error);
+        console.error('회원가입 에러:', error);
         return NextResponse.json(
-            { success: false, message: '서버 에러 발생' },
+            { success: false, message: '서버 에러: ' + error.message }, // 오류 메시지 추가
             { status: 500 }
         );
     }

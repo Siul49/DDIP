@@ -52,6 +52,11 @@ export default function SignupForm({setStatus}) {
         if (result.success) {
             alert(result.message);
             setStatus(true);
+            if (typeof setStatus === 'function') {
+                setStatus(true);
+            }
+            location.reload();
+
         } else {
             alert(result.message);
         }

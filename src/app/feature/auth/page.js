@@ -51,7 +51,7 @@ export default function SignUp() {
                 rounded-[30px] opacity-70 bg-[#FFFEF6] shadow-[0px_0px_40px_0px_#D9D9D9]">
 
                 {status
-                    ? <SignupForm changeStatus={setStatus} />
+                    ? <SignupForm setStatus={setStatus} />
                     : <LoginForm />
                 }
 
