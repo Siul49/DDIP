@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import SimpleDB from "@constants/simpleDB";
 
-
 export default function ItemList({ selectedCategoryValue, onSelect }) {
     const [items, setItems] = useState([]);
     const [activeIndex, setActiveIndex] = useState(null);
@@ -12,21 +11,17 @@ export default function ItemList({ selectedCategoryValue, onSelect }) {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await fetch('/api');   // 전체 object 가져오기
+                const res = await fetch('/api');  // API 경로 수정
                 if (!res.ok) throw new Error('API 호출 실패');
                 const data = await res.json();
                 setItems(data);
-                console.log('현재 API 데이터:', data);  // 데이터 구조 확인
             } catch (error) {
                 console.error('데이터 불러오기 실패:', error);
             }
-            console.log('선택된 카테고리:', selectedCategoryValue);
         };
 
         fetchData();
-    }, []);  // ← 빈 배열: 첫 로딩 시에만 fetch
-
-
+    }, []);
 
     const handleClick = (id) => {
         setActiveIndex(id);
@@ -34,9 +29,9 @@ export default function ItemList({ selectedCategoryValue, onSelect }) {
     };
 
     const filteredItems = selectedCategoryValue
-            ? items.filter(item => item.value === selectedCategoryValue)
-            : items;
-    console.log('items:',items);
+        ? items.filter(item => item.value === selectedCategoryValue)
+        : items;
+
     return (
         <section className="relative w-full h-full flex justify-center text-center">
             <h1 className="font-bold text-3xl">
@@ -68,9 +63,4 @@ export default function ItemList({ selectedCategoryValue, onSelect }) {
             </div>
         </section>
     );
-}
-
-export async function GET(request) {
-    // ...로직
-    return new Response(JSON.stringify({ ok: true }), { status: 200 });
 }

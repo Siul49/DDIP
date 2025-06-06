@@ -5,13 +5,11 @@ const uri = process.env.MONGODB_URI;
 const options = {};
 
 let client;
-let clientPromise;
-
 
 if (!uri) {
     throw new Error('MONGODB_URI 환경 변수가 설정되지 않았습니다.');
 }
-
+//mongoose 범위
 let cached = global.mongoose;
 if (!cached) {
     cached = global.mongoose = { conn: null, promise: null };
@@ -29,6 +27,8 @@ async function dbConnect() {
     cached.conn = await cached.promise;
     return cached.conn;
 }
+//mongodb부분
+let clientPromise;
 
 if (!global._mongoClientPromise) {
     client = new MongoClient(uri, options);
@@ -38,6 +38,6 @@ clientPromise = global._mongoClientPromise;
 
 export default dbConnect;
 
-export { clientPromise };
+export {clientPromise};
 
 
