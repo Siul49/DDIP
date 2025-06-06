@@ -1,11 +1,16 @@
 import Image from 'next/image';
 import ChatBox from './chatting';
+import PostBox from './post';
+
 import {useEffect, useState} from "react";
 
 export default function Shortcut({}) {
-    const [isOpen, setIsOpen] = useState(false);
+    const [isCOpen, setIsCOpen] = useState(false);
+    const [isPOpen, setIsPOpen] = useState(false);
 
-    const toggleChat = () => setIsOpen(!isOpen);
+
+    const toggleChat = () => setIsCOpen(!isCOpen);
+    const togglePost = () => setIsPOpen(!isPOpen);
 
     return (
         <>
@@ -15,15 +20,16 @@ export default function Shortcut({}) {
                 onClick={toggleChat}
             ><Image src="/chat.png" fill alt="chat" className="object-contain p-2"/>
             </button>
-            {isOpen && <ChatBox onClose={toggleChat} />}
+            {isCOpen && <ChatBox onClose={toggleChat} />}
 
             <button
                 className="fixed bottom-20 right-5 p-6 bg-[#FADD88] text-white rounded-full transition z-50
                 hover:bg-[#DABD78]"
-                onClick={() => alert('글쓰기')}
+                onClick={togglePost}
             >
                 <Image src="/Write.png" fill alt="write" className="object-contain p-2"/>
             </button>
+            {isPOpen && <PostBox onClose={togglePost} />}
         </>
     )
 }

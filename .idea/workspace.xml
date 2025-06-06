@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5d6a845-d7f4-47f0-b14b-29de60ee74da" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/components/common/post.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/feature/home/components/item-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/feature/home/components/item-list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/common/shortcut.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/common/shortcut.js" afterDir="false" />
     </list>
     <list id="a019c806-4293-46f6-9a88-704590647923" name="Changes by dokkk0dahee" comment="" />
     <list id="e203547a-a1c8-4849-b46c-a730e29da9c3" name="Changes by kksu1" comment="" />
@@ -25,11 +25,6 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="fillincode" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -68,7 +63,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Users\\pkpk0\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "ts.external.directory.path": "C:\\Users\\USER\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -121,10 +116,7 @@
       <workItem from="1748319543834" duration="375000" />
       <workItem from="1748340397909" duration="2097000" />
       <workItem from="1748342529373" duration="7279000" />
-      <workItem from="1748396975942" duration="2036000" />
-      <workItem from="1748399363258" duration="546000" />
-      <workItem from="1748477066961" duration="322000" />
-      <workItem from="1748482238997" duration="4523000" />
+      <workItem from="1748396975942" duration="1713000" />
     </task>
     <servers />
   </component>
@@ -136,22 +128,21 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="origin/chatwritebutton-chatting" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/app/feature/home/components/category-form.js</url>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
