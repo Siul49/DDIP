@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5d6a845-d7f4-47f0-b14b-29de60ee74da" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/components/common/post.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/common/shortcut.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/common/shortcut.js" afterDir="false" />
     </list>
     <list id="a019c806-4293-46f6-9a88-704590647923" name="Changes by dokkk0dahee" comment="" />
     <list id="e203547a-a1c8-4849-b46c-a730e29da9c3" name="Changes by kksu1" comment="" />
@@ -55,7 +53,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "mongodb",
+    "git-widget-placeholder": "postwritebutton-post에 #10개",
     "js.debugger.nextJs.config.created.client": "true",
     "js.debugger.nextJs.config.created.server": "true",
     "last_opened_file_path": "C:/Users/pkpk0/WebstormProjects/ddip/public/fonts",
@@ -63,7 +61,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Users\\USER\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "ts.external.directory.path": "C:\\Users\\pkpk0\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -76,11 +74,11 @@
       <recent name="C:\Users\pkpk0\WebstormProjects\DDIP" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\pkpk0\WebstormProjects\ddip\public" />
       <recent name="C:\Users\pkpk0\WebstormProjects\ddip\src\app\feature\home\components" />
       <recent name="C:\Users\pkpk0\WebstormProjects\ddip\src\app\components" />
       <recent name="C:\Users\pkpk0\WebstormProjects\DDIP\src\app\feature\auth\components" />
       <recent name="C:\Users\pkpk0\WebstormProjects\DDIP\src\app\feature\auth" />
+      <recent name="C:\Users\pkpk0\WebstormProjects\DDIP" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Next.js: server-side">
@@ -115,8 +113,7 @@
       <workItem from="1748258374355" duration="474000" />
       <workItem from="1748319543834" duration="375000" />
       <workItem from="1748340397909" duration="2097000" />
-      <workItem from="1748342529373" duration="7279000" />
-      <workItem from="1748396975942" duration="1713000" />
+      <workItem from="1748342529373" duration="7019000" />
     </task>
     <servers />
   </component>
@@ -133,16 +130,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/app/feature/home/components/category-form.js</url>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
