@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import ChatList from '../chat/chat-list';
+import Chatting from '../chat/chatting';
 import ChatBox from './chatting';
 import PostBox from './post';
 
@@ -20,6 +22,7 @@ export default function Shortcut({}) {
                 onClick={toggleChat}
             ><Image src="/chat.png" fill alt="chat" className="object-contain p-2"/>
             </button>
+            {isOpen && <ChatList onClose={toggleChat} />}
             {isCOpen && <ChatBox onClose={toggleChat} />}
 
             <button

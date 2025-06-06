@@ -29,3 +29,20 @@ body {
 button {
   cursor: pointer;
 }
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #D9D9D9;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a0aec0; /* gray-600 */
+}
