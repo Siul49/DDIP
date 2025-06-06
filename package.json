@@ -9,9 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "^15.3.2",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "bcryptjs": "^3.0.2",
+    "mongodb": "^6.16.0",
+    "mongoose": "^8.15.1",
+    "next": "15.3.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
