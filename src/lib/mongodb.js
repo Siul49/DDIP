@@ -1,6 +1,12 @@
 import mongoose from 'mongoose';
+import { MongoClient } from 'mongodb';
 
 const uri = process.env.MONGODB_URI;
+const options = {};
+
+let client;
+let clientPromise;
+
 
 if (!uri) {
     throw new Error('MONGODB_URI 환경 변수가 설정되지 않았습니다.');
@@ -24,4 +30,14 @@ async function dbConnect() {
     return cached.conn;
 }
 
+if (!global._mongoClientPromise) {
+    client = new MongoClient(uri, options);
+    global._mongoClientPromise = client.connect();
+}
+clientPromise = global._mongoClientPromise;
+
 export default dbConnect;
+
+export { clientPromise };
+
+

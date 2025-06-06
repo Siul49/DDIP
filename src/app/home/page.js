@@ -1,13 +1,13 @@
 import Navs from "@components/nav";
 import Category from "../feature/category/components/category-form";
 import Image from "next/image";
-import Footer from "../components/footer";
+
 
 export default function Main() {
 
     return (
-        <div className={"flex flex-col w-full h-full bg-[#FFFCED] justify-center text-center"}>
-            <Navs/>
+        <div className={"flex flex-col w-full h-full bg-none justify-center text-center"}>
+
             <div className="relative top-0 w-full h-[80vh] bg-[url(/textured-paper.png)] flex justify-center">
                 <div className="absolute inset-0 bg-lime-500/30 mix-blend-multiply" />
                 <div className="absolute w-[50%] h-[40%] top-[20%]" >
@@ -22,7 +22,6 @@ export default function Main() {
 
                 <div className={"absolute bg-gray-20 w-[75%] h-8 bottom-8 rounded-2xl"}></div>
             </div>
-            <Footer />
         </div>
     )
 }

@@ -3,10 +3,11 @@
 import Category from './feature/category/components/category-form';
 import Main from './home/page'
 import Shortcut from './components/common/shortcut';
-
 import { useState } from 'react';
 import ItemList from './components/item-list';
 import ItemExplain from './pruduct/page';
+import Navs from "@components/nav";
+import Footer from "@components/footer";
 
 
 export default function Home() {
@@ -15,8 +16,11 @@ export default function Home() {
     const [selectedProduct, setSelectedProduct] = useState(null);
 
     return (
-        <div className={'relative w-full h-full flex flex-col justify-center bg-[#FFFCED] text-center'}>
+        <div className={'relative w-full h-full flex flex-col justify-center  text-center'}>
         <Shortcut/>
+            <Navs/>
+
+
             {mode === 'home' && (
                 <>
                     <Main />
@@ -33,7 +37,7 @@ export default function Home() {
                     <div className="w-[80%] mx-auto">
                         <Category onSelect={setSelectedCategory} />
                     </div>
-                    <div className="h-50"/>
+                    <div className="h-100"/>
                     <ItemList selectedCategoryValue={selectedCategory}
                               onSelect={(productID) => {
                                   setSelectedProduct(productID);
