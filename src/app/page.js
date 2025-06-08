@@ -5,7 +5,7 @@ import Main from './home/page'
 import Shortcut from './components/common/shortcut';
 import { useState } from 'react';
 import ItemList from './components/item-list';
-import ItemExplain from './pruduct/page';
+import ItemExplain from './item/page';
 import Navs from "@components/nav";
 import Footer from "@components/footer";
 
@@ -42,7 +42,8 @@ export default function Home() {
                               onSelect={(productID) => {
                                   setSelectedProduct(productID);
                                   setMode('product');
-                              }} />
+                              }}
+                    />
                 </>
             )}
 

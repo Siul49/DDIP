@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server';
-import dbConnect from '../../../../../lib/mongodb';
-import mongoose from 'mongoose';
+import dbConnect from '../../../../../lib/dbConnect';
 import bcrypt from 'bcryptjs';
+import User from '../../../../user/model/user';
+//import { encrypt } from '../../../../../lib/session';
 
 export async function POST(request) {
     try {
@@ -16,10 +17,7 @@ export async function POST(request) {
 
         await dbConnect();
 
-        const userDb = mongoose.connection.useDb('user');
-        const accountCollection = userDb.collection('account');
-
-        const user = await accountCollection.findOne({ userid });
+        const user = await User.findOne({ userid });
         if (!user) {
             return NextResponse.json(
                 { success: false, message: '존재하지 않는 아이디입니다.' },
@@ -35,10 +33,27 @@ export async function POST(request) {
             );
         }
 
-        return NextResponse.json(
-            { success: true, username: user.username },
+
+        /*// 세션 생성
+        const session = await encrypt({ userId: user.userid });
+
+*/
+        // 응답 객체 생성
+        const response = NextResponse.json(
+            { success: true, username: user },
             { status: 200 }
         );
+
+        /*// 쿠키 설정
+        response.cookies.set('session', session, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production',
+            sameSite: 'lax',
+            path: '/',
+            maxAge: 60 * 60 * 24 * 7, // 1주일
+        });*/
+
+        return response;
     } catch (error) {
         return NextResponse.json(
             { success: false, message: '서버 에러 발생' },

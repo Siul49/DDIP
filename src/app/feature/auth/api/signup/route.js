@@ -1,14 +1,11 @@
 import { NextResponse } from 'next/server';
-import {clientPromise} from '../../../../../lib/mongodb'; // clientPromise로 변경
+import dbConnect from '../../../../../lib/dbConnect';
 import bcrypt from 'bcryptjs';
+import User from '../../../../user/model/user';
 
 export async function POST(request) {
     try {
-
-        const client = await clientPromise; // 클라이언트 연결
-
-        const userDb = client.db('user');
-        const accountCollection = userDb.collection('account');
+        await dbConnect(); // DB 연결
 
         const data = await request.json();
         const { userid, userpw, checkpw, username, name, phone, address, email } = data;
@@ -27,12 +24,12 @@ export async function POST(request) {
             );
         }
 
-        // 중복 체크
-        const existing = await accountCollection.findOne({
+        // 중복 체크 (Mongoose 메서드 사용)
+        const existingUser = await User.findOne({
             $or: [{ userid }, { email }]
         });
 
-        if (existing) {
+        if (existingUser) {
             return NextResponse.json(
                 { success: false, message: '이미 존재하는 아이디 또는 이메일입니다.' },
                 { status: 409 }
@@ -42,16 +39,15 @@ export async function POST(request) {
         // 비밀번호 암호화
         const hashedPw = await bcrypt.hash(userpw, 10);
 
-        // 데이터 삽입
-        await accountCollection.insertOne({
+        // 데이터 삽입 (Mongoose 메서드 사용)
+        const newUser = await User.create({
             userid,
             password: hashedPw,
             username,
             name,
             phone,
             address,
-            email,
-            createdAt: new Date()
+            email
         });
 
         return NextResponse.json(
@@ -59,11 +55,10 @@ export async function POST(request) {
             { status: 201 }
         );
 
-
     } catch (error) {
         console.error('회원가입 에러:', error);
         return NextResponse.json(
-            { success: false, message: '서버 에러: ' + error.message }, // 오류 메시지 추가
+            { success: false, message: '서버 에러: ' + error.message },
             { status: 500 }
         );
     }

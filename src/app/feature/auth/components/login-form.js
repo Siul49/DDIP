@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { validatePassword } from './validate';
 import Input from './input';
 import Image from "next/image";
-import {redirect} from "next/navigation";
+import {router} from "next/client";
+import {encrypt, decrypt} from "../../../../lib/session";
 
 export default function LoginForm() {
     const [form, setForm] = useState({
@@ -11,10 +12,10 @@ export default function LoginForm() {
         userpw: '',
     });
     const [error, setError] = useState('');
-
     const handleChange = (field) => (e) => {
         setForm((prev) => ({ ...prev, [field]: e.target.value }));
     };
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -39,6 +40,9 @@ export default function LoginForm() {
                 alert('아주 심각한 에러입니다!');
                 alert('아주 심각한 에러입니다!');
                 alert('사실 에러 아니지롱 데헷😋');
+                res.setHeader('Set-Cookie', `session=${session}; HttpOnly; Secure`);
+
+                await router.push('/');
             } else {
                 setError(result.message || '로그인에 실패했습니다.');
             }

@@ -11,6 +11,7 @@ const userSchema = new mongoose.Schema({
     createdAt: { type: Date, default: Date.now }
 });
 
-const User = mongoose.models.User || mongoose.model('User', userSchema);
+// 연결된 DB가 'user' 데이터베이스라고 가정
+const User = mongoose.models.User || mongoose.model('user', userSchema, 'account');
 
 export default User;

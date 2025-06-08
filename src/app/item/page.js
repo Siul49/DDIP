@@ -13,7 +13,7 @@ export default function ItemExplain({ onSelect }) {
             setLoading(true);
             setError(null);
             try {
-                const res = await fetch('/api');
+                const res = await fetch('/api/item');
                 if (!res.ok) throw new Error('데이터 불러오기 실패');
                 const data = await res.json();
                 setAllData(data);
@@ -53,19 +53,19 @@ export default function ItemExplain({ onSelect }) {
                     />
                 </div>
                 <h2 className="absolute w-[20%] h-[10%] top-10 right-[25%] bg-green-500 font-bold text-4xl">
-                    제품명: {productData.name || '이름 없음'}
+                    제품명: {productData.title || '이름 없음'}
                 </h2>
                 <h3 className="absolute w-[20%] h-[10%] top-30 right-[25%] bg-green-300 font-bold text-2xl">
-                    상세설명: {productData.desc}
+                    상세설명: {productData.description}
                 </h3>
                 <h3 className="absolute w-[20%] h-[10%] top-50 right-[25%] bg-green-300 font-bold text-2xl">
-                    DDIP: {productData.price}원 / {productData.max}명
+                    DDIP: {productData.totalPrice}원 / {productData.totalNumberOfRecruits}명
                 </h3>
                 <h3 className="absolute w-[20%] h-[10%] top-120 left-10 bg-green-300 font-bold text-2xl">
                     현재인원
                 </h3>
                 <div className="absolute w-[25%] bottom-10 left-0 gap-4 grid grid-cols-4">
-                    {Array.from({ length: productData.now }).map((_, idx) => (
+                    {Array.from({ length: productData.numberOfRecruitedPersonnel }).map((_, idx) => (
                         <div key={idx} className="relative aspect-square rounded-full bg-[#000000]">
                             <Image
                                 src="/testimage.png"
@@ -75,7 +75,7 @@ export default function ItemExplain({ onSelect }) {
                             />
                         </div>
                     ))}
-                    {Array.from({ length: productData.max - productData.now }).map((_, idx) => (
+                    {Array.from({ length: productData.totalNumberOfRecruits - productData.numberOfRecruitedPersonnel }).map((_, idx) => (
                         <div key={idx} className="relative aspect-square rounded-full bg-[#000000]">
                             <div className="w-full h-full p-2 bg-white border-4 rounded-full"></div>
                         </div>
