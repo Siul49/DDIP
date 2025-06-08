@@ -1,9 +1,8 @@
-/*
-import { sealData, unsealData } from 'iron-session';
+const { sealData, unsealData } = require('iron-session');
 
 const sessionSecret = process.env.SESSION_SECRET;
+
 if (!sessionSecret) {
-    console.log(sessionSecret);
     throw new Error('SESSION_SECRET 환경변수가 필요해요!');
 }
 
@@ -28,4 +27,3 @@ async function decrypt(session) {
 }
 
 module.exports = { encrypt, decrypt };
-*/

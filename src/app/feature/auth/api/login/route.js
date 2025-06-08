@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
 import dbConnect from '../../../../../lib/dbConnect';
 import bcrypt from 'bcryptjs';
-import User from '../../../../user/model/user';
-//import { encrypt } from '../../../../../lib/session';
+import User from '../../../../user/model/User';
+import { encrypt } from '../../../../../lib/session';
 
 export async function POST(request) {
     try {
@@ -26,6 +26,7 @@ export async function POST(request) {
         }
 
         const isMatch = await bcrypt.compare(userpw, user.password);
+
         if (!isMatch) {
             return NextResponse.json(
                 { success: false, message: '비밀번호가 일치하지 않습니다.' },
@@ -34,27 +35,26 @@ export async function POST(request) {
         }
 
 
-        /*// 세션 생성
         const session = await encrypt({ userId: user.userid });
 
-*/
         // 응답 객체 생성
         const response = NextResponse.json(
-            { success: true, username: user },
+            { success: true, username: user.username },
             { status: 200 }
         );
 
-        /*// 쿠키 설정
+        // 쿠키 설정
         response.cookies.set('session', session, {
             httpOnly: true,
             secure: process.env.NODE_ENV === 'production',
             sameSite: 'lax',
             path: '/',
-            maxAge: 60 * 60 * 24 * 7, // 1주일
-        });*/
+            maxAge: 60 * 60 * 24 * 7,
+        });
 
         return response;
     } catch (error) {
+        console.error(error);
         return NextResponse.json(
             { success: false, message: '서버 에러 발생' },
             { status: 500 }

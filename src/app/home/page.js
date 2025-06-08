@@ -1,5 +1,3 @@
-import Navs from "@components/nav";
-import Category from "../feature/category/components/category-form";
 import Image from "next/image";
 
 

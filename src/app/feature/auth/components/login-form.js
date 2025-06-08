@@ -1,12 +1,14 @@
+'use client'
 
 import { useState } from 'react';
 import { validatePassword } from './validate';
 import Input from './input';
 import Image from "next/image";
-import {router} from "next/client";
-import {encrypt, decrypt} from "../../../../lib/session";
+import { useRouter } from 'next/navigation';
 
 export default function LoginForm() {
+    const router = useRouter();
+
     const [form, setForm] = useState({
         userid: '',
         userpw: '',
@@ -40,8 +42,7 @@ export default function LoginForm() {
                 alert('아주 심각한 에러입니다!');
                 alert('아주 심각한 에러입니다!');
                 alert('사실 에러 아니지롱 데헷😋');
-                res.setHeader('Set-Cookie', `session=${session}; HttpOnly; Secure`);
-
+                alert(result.username + '님 환영합니다')
                 await router.push('/');
             } else {
                 setError(result.message || '로그인에 실패했습니다.');
