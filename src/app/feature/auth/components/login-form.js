@@ -28,7 +28,7 @@ export default function LoginForm() {
         }
 
         try {
-            const response = await fetch('/feature/auth/api/login', {
+            const response = await fetch('/api/auth/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(form),
@@ -42,7 +42,7 @@ export default function LoginForm() {
                 alert('아주 심각한 에러입니다!');
                 alert('아주 심각한 에러입니다!');
                 alert('사실 에러 아니지롱 데헷😋');
-                alert(result.username + '님 환영합니다')
+                alert(result.nickname + '님 환영합니다')
                 await router.push('/');
             } else {
                 setError(result.message || '로그인에 실패했습니다.');

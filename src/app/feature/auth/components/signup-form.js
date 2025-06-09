@@ -12,8 +12,8 @@ export default function SignupForm({setStatus}) {
         userid: '',
         userpw: '',
         checkpw: '',
+        nickname: '',
         username: '',
-        name: '',
         phone: '',
         address: '',
         email: '',
@@ -43,7 +43,7 @@ export default function SignupForm({setStatus}) {
             return setError("비밀번호가 일치하지 않습니다.");
         }
 
-        const response = await fetch("/feature/auth/api/signup", {
+        const response = await fetch("/api/auth/signup", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(form),
@@ -83,18 +83,18 @@ export default function SignupForm({setStatus}) {
             className="mt-[25px]"
         /><Input 
             label="별명"
-            name="username"
-            value={form.username}
-            onChange={handleChange('username')}
+            name="nickname"
+            value={form.nickname}
+            onChange={handleChange('nickname')}
             placeholder="별명을 입력해주세요. (최대 8자)"
         /><Input 
             label="비밀번호"
             name="userpw"
-            value={form.userpw}checkpw
+            value={form.userpw}
             onChange={handleChange('userpw')}
             placeholder="비밀번호를 입력해주세요. (8자 이상)"
         /><Input 
-            label=""
+            label="비밀번호 췍"
             name="checkpw"
             value={form.checkpw}
             onChange={handleChange('checkpw')}
@@ -102,9 +102,9 @@ export default function SignupForm({setStatus}) {
             className="mt-[-15px]"
         /><Input 
             label="이름"
-            name="name"
-            value={form.name}
-            onChange={handleChange('name')}
+            name="username"
+            value={form.username}
+            onChange={handleChange('username')}
             placeholder="이름을 입력해주세요."
         /><Input 
             label="전화번호"

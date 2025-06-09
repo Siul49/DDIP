@@ -35,11 +35,11 @@ export async function POST(request) {
         }
 
 
-        const session = await encrypt({ userId: user.userid });
+        const session = await encrypt({ nickname: user.nickname });
 
         // 응답 객체 생성
         const response = NextResponse.json(
-            { success: true, username: user.username },
+            { success: true, nickname: user.nickname },
             { status: 200 }
         );
 

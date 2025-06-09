@@ -8,10 +8,10 @@ export async function POST(request) {
         await dbConnect(); // DB 연결
 
         const data = await request.json();
-        const { userid, userpw, checkpw, username, name, phone, address, email } = data;
+        const { userid, userpw, checkpw, username, nickname, phone, address, email } = data;
 
         // 필수값 체크 (기존 코드와 동일)
-        if (!userid || !userpw || !checkpw || !username || !name || !phone || !address || !email) {
+        if (!userid || !userpw || !checkpw || !username || !nickname || !phone || !address || !email) {
             return NextResponse.json(
                 { success: false, message: '모든 빈칸을 채워주세요!' },
                 { status: 400 }
@@ -44,7 +44,7 @@ export async function POST(request) {
             userid,
             password: hashedPw,
             username,
-            name,
+            nickname,
             phone,
             address,
             email

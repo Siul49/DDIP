@@ -12,11 +12,10 @@ export default function NavClient() {
 
     // 1. 로그인 정보 가져오기
     useEffect(() => {
-        fetch('/api/check')
+        fetch('/api/auth/check')
             .then(res => res.json())
             .then(data => setUser(data.user))
     }, [])
-
 
     useEffect(() => {
         const scrolled = () => setMoved(window.scrollY > 50)
@@ -37,12 +36,11 @@ export default function NavClient() {
 
             {user ? (
                 <><span className="absolute right-40 text-black">
-                    안녕하세요, {user.username}님
+                    안녕하세요, {user.nickname}님
                 </span>
                     <span className="absolute right-22 text-black">
                     <LogoutButton />
                 </span>
-
                 </>
 
             ) : (
