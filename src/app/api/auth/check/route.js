@@ -1,6 +1,6 @@
 // app/api/auth/check/route.js
 import { NextResponse } from 'next/server'
-import { decrypt } from '../../../lib/session'
+import { decrypt } from '../../../../lib/session'
 
 export async function GET(request) {
     try {

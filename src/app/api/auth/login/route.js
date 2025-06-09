@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
-import dbConnect from '../../../../../lib/dbConnect';
+import dbConnect from '../../../../lib/dbConnect';
 import bcrypt from 'bcryptjs';
-import User from '../../../../user/model/User';
-import { encrypt } from '../../../../../lib/session';
+import User from '../../../user/model/User';
+import { encrypt } from '../../../../lib/session';
 
 export async function POST(request) {
     try {

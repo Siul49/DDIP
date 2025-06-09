@@ -1,6 +1,6 @@
 'use client'
 
-import ItemList from "../../../app/components/item-list";
+import ItemList from "./components/item-list";
 import {useState} from "react";
 import Category from "./components/category-form";
 import NavClient from "@components/common/Nav.client";
