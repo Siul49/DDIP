@@ -2,19 +2,25 @@
 
 import Image from 'next/image'
 import category_lists from '@constants/simpleDB';
+import {useRouter} from "next/navigation";
+import {useState} from "react";
 
 export default function Category({onSelect}) {
 
-    const handleClick = (category) => {
-        onSelect(category);
+    const router = useRouter();
+    const [activeCategory, setActiveCategory] = useState('');
+    const handleClick = (selected_index) => {
+        setActiveCategory(selected_index);
+        if (onSelect) onSelect(selected_index);
+        router.push('/feature/category')
     };
 
     return (
         <section className="relative w-full flex flex-col items-center justify-center">
-            <h2 className={"absolute w-full top-16 font-bold text-3xl text-center"}>카테고리</h2>
             <div className={"relative top-30 w-[75%] h-65 grid grid-cols-6 gap-4 rounded-2xl"}>
                 {category_lists.map((item) => (
-                    <button key={item.key} onClick={() => handleClick(item.value)} className="relative w-full h-full p-4
+                    <button key={item.key} onClick={() => handleClick(item.value)   }
+                            className="relative w-full h-full p-4
                         flex flex-col justify-center text-center">
                         <div className={"absolute w-full h-[90%]"}>
                             <Image src={`/categoryImg/${item.value}.png`}
