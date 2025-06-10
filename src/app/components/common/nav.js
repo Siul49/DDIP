@@ -28,7 +28,7 @@ export default function Nav() {
             className={`fixed top-0 left-0 right-0 z-50 bg-[#FFFCED] shadow-lg flex items-center justify-center hover:opacity-100
         transition-all duration-300 ${moving ? 'h-12 opacity-0 hover:h-20' : 'h-20 opacity-100 hover:shadow-2xl'}`}
         >
-            <Link href="/public" className="absolute w-32 left-3 text-center text-green-500 rounded-2xl cursor-pointer">
+            <Link href="/" className="absolute w-32 left-3 text-center text-green-500 rounded-2xl cursor-pointer">
                 <div className="w-32 h-12 left-3">
                     <Image src="/DDIP.png" fill alt="Home" className="object-contain" />
                 </div>
