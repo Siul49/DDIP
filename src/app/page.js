@@ -2,18 +2,26 @@
 
 import Category from './feature/category/components/category-form';
 import Main from './home/page'
-import Footer from "./components/footer";
-import NavClient from "@components/common/Nav.client";
-import {useState} from "react";
+import Footer from "@components/common/footer";
+import Nav from "@components/common/nav";
+import {useEffect, useState} from "react";
+import Shortcut from "@components/shortcut/shortcut";
 
 export default function Home() {
     const [selectedCategory, setSelectedCategory] = useState('ingredient');
+    const [user, setUser] = useState(null);
+    useEffect(() => {
+        fetch('/api/auth/check')
+            .then(res => res.json())
+            .then(data => setUser(data.user))
+    }, [])
 
     return (
         <div className={'relative w-full h-full flex flex-col justify-center bg-[#FFFCED] text-center'}>
-            <NavClient />
+            <Nav />
             <Main />
             <Category onSelect={setSelectedCategory} />
+            <Shortcut />
             <Footer />
         </div>
     );

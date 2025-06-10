@@ -3,7 +3,7 @@
 import SignupForm from './components/signup-form';
 import LoginForm from "./components/login-form";
 import { useState } from "react";
-import NavClient from "@components/common/Nav.client";
+import Nav from "@components/common/nav";
 
 
 export default function SignUp() {
@@ -11,7 +11,7 @@ export default function SignUp() {
 
     return (
         <div className="relative w-full h-full flex flex-col items-center bg-[#FFFEF]">
-            <NavClient />
+            <Nav />
 
             <div className="flex flex-col items-center w-[660px] h-full mt-[150px] mb-[100px]
                 rounded-[30px] opacity-70 bg-[#FFFEF6] shadow-[0px_0px_40px_0px_#D9D9D9]">

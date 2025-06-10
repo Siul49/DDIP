@@ -3,7 +3,7 @@
 import ItemList from "./components/item-list";
 import {useState} from "react";
 import Category from "./components/category-form";
-import NavClient from "@components/common/Nav.client";
+import Nav from "@components/common/nav";
 
 
 export default function CategoryPage() {
@@ -12,7 +12,7 @@ export default function CategoryPage() {
 
     return(
         <div className={'relative w-full h-full flex flex-col justify-center bg-[#FFFCED] text-center'}>
-            <NavClient />
+            <Nav />
             <div className="h-16"/>
             <div className="w-[80%] mx-auto">
                 <Category onSelect={setSelectedCategory} />

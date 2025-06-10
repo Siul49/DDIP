@@ -1,4 +1,4 @@
-// app/components/Nav.client.js (클라이언트 컴포넌트)
+// app/components/nav (클라이언트 컴포넌트)
 'use client'
 
 import Image from 'next/image'
@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import LogoutButton from "@auth/components/logout-button";
 
-export default function NavClient() {
+export default function Nav() {
     const [user, setUser] = useState(null)
     const [moving, setMoved] = useState(false)
 
