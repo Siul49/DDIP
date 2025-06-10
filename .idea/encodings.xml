@@ -3,6 +3,6 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/ddip/public/fonts/PretendardVariable.woff2" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/app/api/auth/signup/route.js" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/app/home/page.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/app/feature/home/page.js" charset="UTF-8" />
   </component>
 </project>

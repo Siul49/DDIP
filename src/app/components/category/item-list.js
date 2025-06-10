@@ -2,16 +2,17 @@
 
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import {useRouter} from "next/navigation";
 
 
-export default function ItemList({ selectedCategoryValue, onSelect }) {
+export default function ItemList({ selectedCategory }) {
     const [items, setItems] = useState([]);
-    const [activeIndex, setActiveIndex] = useState(null);
-
+    const [filteredItems, setFilteredItems] = useState([]);
+    const router = useRouter();
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await fetch('/api/item');
+                const res = await fetch('/api/post/item');
                 if (!res.ok) throw new Error('API 호출 실패');
                 const data = await res.json();
                 setItems(data);
@@ -24,13 +25,16 @@ export default function ItemList({ selectedCategoryValue, onSelect }) {
 
 
     const handleClick = (id) => {
-        setActiveIndex(id);
-        if (onSelect) onSelect(id);
+        router.push(`/feature/product/${id}`);
     };
-
-    const filteredItems = selectedCategoryValue
-            ? items.filter(item => item.value === selectedCategoryValue)
+    
+    useEffect(() => {
+        const filteredItem = selectedCategory
+            ? items.filter(item => item.itemCategory === selectedCategory)
             : items;
+        setFilteredItems(filteredItem);
+
+    }, [selectedCategory, items])
     console.log('items:',items);
 
     return (
@@ -39,11 +43,9 @@ export default function ItemList({ selectedCategoryValue, onSelect }) {
             <div className="absolute top-15 w-[65%] aspect-square grid grid-cols-4 grid-rows-4 rounded-2xl">
                 {filteredItems.map((item) => (
                     <button
-                        key={item.itemId}
-                        className={`relative aspect-square hover:bg-gray-300/40 select-transition w-full h-full p-4 rounded-2xl ${
-                            activeIndex === item.itemId? 'bg-gray-200' : ''
-                        }`}
-                        onClick={() => handleClick(item.itemId)}
+                        key={item._id}
+                        className="relative aspect-square hover:bg-gray-300/40 select-transition w-full h-full p-4 rounded-2xl"
+                        onClick={() => handleClick(item._id)}
                     >
                         <Image
                             src="/testimage.png"

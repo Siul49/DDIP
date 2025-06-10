@@ -1,11 +1,11 @@
 'use client'
 
-import Category from './feature/category/components/category-form';
-import Main from './home/page'
+import Category from '@components/category/category-form';
+import Main from './feature/home/page'
 import Footer from "@components/common/footer";
 import Nav from "@components/common/nav";
 import {useEffect, useState} from "react";
-import Shortcut from "@components/shortcut/shortcut";
+import Shortcut from "./feature/shortcut/shortcut";
 
 export default function Home() {
     const [selectedCategory, setSelectedCategory] = useState('ingredient');

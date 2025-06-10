@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import ChatBox from './chat/chatting';
-import PostBox from './post/post-box';
+import ChatBox from '@components/chat/chatting';
+import PostBox from '@components/post/post-box';
 
 import {useEffect, useState} from "react";
 

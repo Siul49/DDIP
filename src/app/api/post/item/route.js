@@ -1,12 +1,12 @@
 import { NextResponse } from 'next/server';
 import dbConnect from '../../../../lib/dbConnect';
-import Item from '../../../item/model/item';
+import Item from '../../../../models/item';
 
 export async function GET(request) {
     try {
         await dbConnect();
         const items = await Item.find({});
-
+        console.log(items);
         // 반드시 JSON 형태로 응답!
         return NextResponse.json(items, { status: 200 });
     } catch (error) {

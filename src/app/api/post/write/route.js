@@ -1,5 +1,5 @@
 import dbConnect from '../../../../lib/dbConnect';
-import Item from '../../../item/model/item';
+import Item from '../../../../models/item';
 
 export async function POST(request) {
     try {

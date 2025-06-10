@@ -1,7 +1,7 @@
 'use client'
 
-import SignupForm from './components/signup-form';
-import LoginForm from "./components/login-form";
+import SignupForm from '@components/auth/signup-form';
+import LoginForm from "@components/auth/login-form";
 import { useState } from "react";
 import Nav from "@components/common/nav";
 

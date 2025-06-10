@@ -1,14 +1,13 @@
 'use client'
 
-import ItemList from "./components/item-list";
+import ItemList from "@components/category/item-list";
 import {useState} from "react";
-import Category from "./components/category-form";
+import Category from "@components/category/category-form";
 import Nav from "@components/common/nav";
 
 
 export default function CategoryPage() {
-    const [selectedCategory, setSelectedCategory] = useState('ingredient');
-    const [selectedProduct, setSelectedProduct] = useState(null);
+    const [selectedCategory, setSelectedCategory] = useState('식재료');
 
     return(
         <div className={'relative w-full h-full flex flex-col justify-center bg-[#FFFCED] text-center'}>
@@ -19,7 +18,7 @@ export default function CategoryPage() {
             </div>
             <div className="h-50"/>
             <h1 className={"font-bold text-3xl"}>{selectedCategory}</h1>
-            <ItemList category={selectedCategory} onSelect={setSelectedProduct} />
+            <ItemList category={selectedCategory} />
         </div>
     )
 }

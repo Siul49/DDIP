@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useRef } from 'react';
-import ConfirmModal from '@components/shortcut/post/post-confirm-modal';
+import ConfirmModal from '@components/post/post-confirm-modal';
 
 export default function WritingPage() {
     const [showConfirm, setShowConfirm] = useState(false);
