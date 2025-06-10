@@ -6,15 +6,17 @@ export default function Main() {
     return (
         <div className={"flex flex-col w-full h-full bg-none justify-center text-center"}>
 
-            <div className="relative top-0 w-full h-[80vh] bg-[url(/textured-paper.png)] flex justify-center">
-                <div className="absolute inset-0 bg-lime-500/30 mix-blend-multiply" />
-                <div className="absolute w-[50%] h-[40%] top-[20%]" >
+            <div className="relative top-0 w-full h-[80vh] bg-[url(/background.png)] flex justify-center bg-cover">
+
+                <div className="absolute w-[30%] h-[30%] top-[45%]" >
                     <Image fill src="/DDIP.png" className={"object-contain"}  alt="사진이미지"/>
                 </div>
 
-                <div className="absolute searchslot w-[60%] h-16 bottom-24 flex items-center">
-                    <input type="text" id="search" minLength="0" className="absolute w-[90%] h-full left-4 outline-0"/>
-                    <button className={"absolute bg-green-500 hover:bg-green-400 rounded-full w-36 h-[80%] right-2 font-bold text-white select-transition"}>
+                <div className="absolute searchslot w-[60%] h-16 bottom-10 flex items-center pl-6 pr-4 gap-4">
+                    <Image src="/Search.png" className={"object-contain"}  alt="검색 아이콘" width={24} height={24}/>
+                    <input type="text" placeholder = "제품명을 입력하세요" id="search" minLength="0" className="absolute w-[90%] h-full left-20 outline-0 text-xl font-medium focus:outline-none focus:ring-0 focus:shadow-none
+"/>
+                    <button className={"absolute bg-[#FADD88] hover:bg-[#FFD24E] rounded-full w-36 h-[80%] right-2 font-semibold text-[#505050] text-lg select-transition tracking-widest"}>
                         SEARCH</button>
                 </div>
 
