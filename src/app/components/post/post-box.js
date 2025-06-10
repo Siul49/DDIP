@@ -134,14 +134,22 @@ export default function PostBox({ onClose }) {
                     {/* 이미지 업로드 */}
                     <div className="flex items-center">
                         <label className="w-26 text-md font-semibold text-[#4D4D4D]">상품이미지</label>
-                        <input
-                            type="file"
-                            className="w-full border border-[#E0E0E0] rounded-lg p-2"
-                            name="image"
-                            accept="image/*"
-                            onChange={handleImageChange}
-                        />
-                        {form.image && <span className="ml-2">{form.image.name}</span>}
+                        <div className={"w-full border border-[#E0E0E0] rounded-lg p-2"}>
+                            <a className="absolute">
+                                {form.image ? (
+                                    <span className="ml-2">{form.image.name}</span>
+                                ) : (
+                                    "여기에 파일을 넣으세요."
+                                )}
+                            </a>
+                            <input
+                                type="file"
+                                className="w-full  opacity-0"
+                                name="image"
+                                accept="image/*"
+                                onChange={handleImageChange}
+                            />
+                        </div>
                     </div>
 
                     {/* 제목 */}
