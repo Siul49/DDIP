@@ -22,7 +22,6 @@ export default function Home() {
             <Main />
             <Category onSelect={setSelectedCategory} />
             <Shortcut />
-            <Footer />
         </div>
     );
 }

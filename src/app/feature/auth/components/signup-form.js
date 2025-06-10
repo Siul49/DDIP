@@ -65,76 +65,77 @@ export default function SignupForm({setStatus}) {
     };
 
     return (
-        <div  className="flex flex-col max-w-[420px] justify-center">
-        <Image
-            src="/DDIP.png"
-            alt="log"
-            width={200}
-            height={100}
-            className="mt-4 flex justify-center items-center mx-auto"
-        />
-        <form onSubmit={handleSubmit} className="flex flex-col max-w-[460px] gap-[30px] mx-auto">
-        <Input 
-            label="아이디"
-            name="userid"
-            value={form.userid}
-            onChange={handleChange('userid')}
-            placeholder="아이디를 입력해주세요."
-            className="mt-[25px]"
-        /><Input 
-            label="별명"
-            name="nickname"
-            value={form.nickname}
-            onChange={handleChange('nickname')}
-            placeholder="별명을 입력해주세요. (최대 8자)"
-        /><Input 
-            label="비밀번호"
-            name="userpw"
-            value={form.userpw}
-            onChange={handleChange('userpw')}
-            placeholder="비밀번호를 입력해주세요. (8자 이상)"
-        /><Input 
-            label="비밀번호 췍"
-            name="checkpw"
-            value={form.checkpw}
-            onChange={handleChange('checkpw')}
-            placeholder="비밀번호를 입력해주세요. (8자 이상)"
-            className="mt-[-15px]"
-        /><Input 
-            label="이름"
-            name="username"
-            value={form.username}
-            onChange={handleChange('username')}
-            placeholder="이름을 입력해주세요."
-        /><Input 
-            label="전화번호"
-            name="phone"
-            value={form.phone}
-            onChange={handleChange('phone')}
-            placeholder="전화번호를 입력해주세요. ('-' 제외)"
-        /><Input 
-            label="주소"
-            name="address"
-            value={form.address}
-            onChange={handleChange('address')}
-            placeholder="주소를 입력해주세요."
-        /><Input 
-            label="이메일"
-            name="email"
-            value={form.email}
-            onChange={handleChange('email')}
-            placeholder="example@email.com"
-        />
+        <div className="flex flex-col max-w-[420px] justify-center items-center" style={{paddingTop: '42px'}}>
+            <div className="absolute top-32">
+                <Image
+                    src="/DDIP.png"
+                    alt="logo"
+                    width={360}
+                    height={300}
+                />
+            </div>
+            <form onSubmit={handleSubmit} className="flex flex-col max-w-[460px] gap-[40px]">
+                <Input
+                    label="아이디"
+                    name="userid"
+                    value={form.userid}
+                    onChange={handleChange('userid')}
+                    placeholder="아이디를 입력해주세요."
+                /><Input
+                label="별명"
+                name="nickname"
+                value={form.nickname}
+                onChange={handleChange('nickname')}
+                placeholder="별명을 입력해주세요. (최대 8자)"
+            /><Input
+                label="비밀번호"
+                name="userpw"
+                value={form.userpw}
+                onChange={handleChange('userpw')}
+                placeholder="비밀번호를 입력해주세요. (8자 이상)"
+            /><Input
+                label="비밀번호 확인"
+                name="checkpw"
+                value={form.checkpw}
+                onChange={handleChange('checkpw')}
+                placeholder="비밀번호를 입력해주세요. (8자 이상)"
+            /><Input
+                label="이름"
+                name="username"
+                value={form.username}
+                onChange={handleChange('username')}
+                placeholder="이름을 입력해주세요."
+            /><Input
+                label="전화번호"
+                name="phone"
+                value={form.phone}
+                onChange={handleChange('phone')}
+                placeholder="전화번호를 입력해주세요. ('-' 제외)"
+            /><Input
+                label="주소"
+                name="address"
+                value={form.address}
+                onChange={handleChange('address')}
+                placeholder="주소를 입력해주세요."
+            /><Input
+                label="이메일"
+                name="email"
+                value={form.email}
+                onChange={handleChange('email')}
+                placeholder="example@email.com"
+            />
 
-        <AgreementBox agreed={agreed} onChange={setAgreed} />
+                <AgreementBox agreed={agreed} onChange={setAgreed}/>
 
-            {error && <p className="text-red-500 text-center">{error}</p>}
+                {error && <p className="text-red-500 text-center">{error}</p>}
 
-        <button type="submit"
-                className="w-[250px] h-[50px] mx-auto mb-[50px] rounded-[20px]
+                <button type="submit"
+                        className="w-[250px] h-[50px] mx-auto mb-[50px] rounded-[20px]
         bg-[#FADD88] hover:bg-[#E4C878] transition-colors duration-200
         font-[Pretendard Variable] text-[20px] font-semibold
-        cursor-pointer block">회원가입하기</button>
-    </form></div>
+        cursor-pointer block">회원가입하기
+                </button>
+            </form>
+        </div>
     )
 }

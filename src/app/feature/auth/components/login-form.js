@@ -53,14 +53,16 @@ export default function LoginForm() {
     };
 
     return (
-        <div className="flex flex-col max-w-[420px] justify-items-center " style={{ paddingTop: '100px' }}>
-            <Image
-                src="/DDIP.png"
-                alt="log"
-                width={600}
-                height={300}
-            />
-            <form onSubmit={handleSubmit} className="flex flex-col max-w-[460px] gap-[30px] mx-auto">
+        <div className="flex flex-col w-full justify-center items-center" style={{paddingTop: '35px'}}>
+            <div className="absolute top-28">
+                <Image
+                    src="/DDIP.png"
+                    alt="logo"
+                    width={500}
+                    height={300}
+                />
+            </div>
+            <form onSubmit={handleSubmit} className="flex flex-col max-w-[460px] gap-[40px] mx-auto">
                 <Input
                     label="아이디"
                     name="userid"
@@ -79,7 +81,7 @@ export default function LoginForm() {
                 {error && <p className="text-red-500 text-center">{error}</p>}
                 <button
                     type="submit"
-                    className="w-[250px] h-[50px] mx-auto mb-[50px] rounded-[20px] bg-[#FADD88] hover:bg-[#E4C878] transition-colors duration-200 font-[Pretendard Variable] text-[20px] font-semibold cursor-pointer block"
+                    className="w-[250px] h-[50px] mx-auto mt-[10px] mb-[20px] rounded-[30px] bg-[#FADD88] hover:bg-[#FFD24E] transition-colors duration-200 font-[Pretendard Variable] text-[20px] font-semibold cursor-pointer block"
                 >
                     로그인하기
                 </button>

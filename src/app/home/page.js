@@ -8,7 +8,7 @@ export default function Main() {
 
             <div className="relative top-0 w-full h-[80vh] bg-[url(/background.png)] flex justify-center bg-cover">
 
-                <div className="absolute w-[30%] h-[30%] top-[45%]" >
+                <div className="absolute w-[32%] h-[30%] top-[42%]" >
                     <Image fill src="/DDIP.png" className={"object-contain"}  alt="사진이미지"/>
                 </div>
 

@@ -10,15 +10,17 @@ export default function SignUp() {
     const [status, setStatus] = useState(false);
 
     return (
-        <div className="relative w-full h-full flex flex-col items-center bg-[#FFFEF]">
-            <Nav />
+        <div className={`relative w-full flex flex-col items-center bg-[#FFFCED]
+    ${status ? 'h-full mb-[1100px]' : 'h-200 mb-[0px]'}`}>
+            <Nav/>
 
-            <div className="flex flex-col items-center w-[660px] h-full mt-[150px] mb-[100px]
-                rounded-[30px] opacity-70 bg-[#FFFEF6] shadow-[0px_0px_40px_0px_#D9D9D9]">
+            <div className={`flex flex-col items-center w-[660px] mb-[110px]
+    rounded-[30px] opacity-70 bg-[#FFFEF6] shadow-[0px_0px_40px_0px_#D9D9D9]
+    ${status ? 'h-[1750px] mt-[290px]' : 'h-[470px] mt-[320px]'}`}>
 
                 {status
-                    ? <SignupForm setStatus={setStatus} />
-                    : <LoginForm />
+                    ? <SignupForm setStatus={setStatus}/>
+                    : <LoginForm/>
                 }
 
                 {/*
@@ -28,7 +30,7 @@ export default function SignUp() {
 
                 <button
                     onClick={() => setStatus(!status)}
-                    className="mb-3 text-blue-500 underline"
+                    className="mb-30 text-blue-500 underline"
                 >
                     {status ? '로그인으로 돌아가기' : '회원가입'}
                 </button>
