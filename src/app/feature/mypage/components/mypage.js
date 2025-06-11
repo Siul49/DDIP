@@ -35,25 +35,29 @@ export default function MypageMain() {
                         text-[13px] text-[#888C85] text-regular">정보 수정하기</button>
                 </div>
 
-                {/* 우측: 상품 정보 */}
-                <div className="flex flex-col gap-[2px] w-[520px] ml-[20px] mt-[20px] text-left">
-                    {/* 사용자 이름 */}
-                    <h2 className="text-[28px] font-semibold">{user.nickname}</h2>
-                    {/* 사용자 아이디 */}
-                    <p className='text-[14px] text-[#888C85] font-regular'>{user.username}</p>
-                    {/* */}
-                    <p className='text-[16px] text-[#000000] font-regular mt-[10px]'>한줄 소개 쏼라쏼라 어쩌르티비 홍홍홍~</p>
-                    {/* */}
-                    <p className='text-[14px] text-[#888C85] font-regular mt-[10px]'>{user.address}</p>
-                </div>
-            </div>
+                        {/* 우측: 상품 정보 */}
+                        <div className="flex flex-col gap-[2px] w-[520px] ml-[20px] mt-[20px] text-left">
+                            {/* 사용자 이름 */}
+                            <h2 className="text-[28px] font-semibold">{user.nickname}</h2>
+                            {/* 사용자 아이디 */}
+                            <p className='text-[14px] text-[#888C85] font-regular'>{user.userid}</p>
+                            {/* */}
+                            <p className='text-[16px] text-[#000000] font-regular mt-[10px]'>{user.description}</p>
+                            {/* */}
+                            <p className='text-[14px] text-[#888C85] font-regular mt-[10px]'>{user.address}</p>
+                        </div>
+                    </div>
+            )}
 
             {/* 상품 설명 */}
-            <div className="mt-[150px] mx-[80px]">
-                <ProductManage selected={selected} onChange={setSelected} />
-                <ProductWishList />
+            {editMode ? null
+                : (
+                    <div className="mt-[150px] mx-[80px]">
+                        <ProductManage selected={selected} onChange={setSelected} />
+                        <ProductWishList />
 
-            </div>
+                    </div>
+                )}
         </section>
         </>
     );

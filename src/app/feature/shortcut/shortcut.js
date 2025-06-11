@@ -1,10 +1,10 @@
 'use client'
 
 import Image from 'next/image';
-import ChatBox from '@components/chat/chatting';
 import PostBox from '@components/post/post-box';
 
 import {useEffect, useState} from "react";
+import ChatList from "../chat/page";
 
 export default function Shortcut({}) {
     const [isCOpen, setIsCOpen] = useState(false);
@@ -30,7 +30,7 @@ export default function Shortcut({}) {
                         onClick={toggleChat}
                     ><Image src="/chat.png" fill alt="chat" className="object-contain p-2"/>
                     </button>
-                    {isCOpen && <ChatBox onClose={toggleChat} />}
+                    {isCOpen && <ChatList onClose={toggleChat} />}
 
                     <button
                         className="fixed bottom-21 right-5 p-7 bg-[#FADD88] text-white rounded-full transition z-50

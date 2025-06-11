@@ -21,17 +21,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#FFFCED]`}
-      >
-        {children}
-        <footer className={"flex bottom-0 items-center justify-center"}>
-            <Footer/>
-        </footer>
-      <Shortcut />
+        <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#FFFCED] min-h-screen flex flex-col`}>
+          <main className="flex-grow">
+              {children}
+          </main>
 
-      </body>
+          <footer className="w-full">
+              <Footer/>
+          </footer>
 
+          <Shortcut />
+        </body>
     </html>
   );
 }

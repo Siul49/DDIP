@@ -49,6 +49,11 @@ export default function Product({ onSelect }) {
         }
     }, [id]);
 
+    const getInChat = () => {
+        alert('채팅방 가입 성공!');
+
+    }
+
     return (
         <div className="flex justify-center">
             <Nav />
@@ -99,13 +104,11 @@ export default function Product({ onSelect }) {
                                         <>
                                             {/* 버튼들 */}
                                             <div className="flex gap-[10px] mt-[20px] font-medium text-[14px] ">
-                                                <button className="border-[2px] border-[#FADD88] w-[230px] ml-[-10px] px-4 py-2 rounded-[10px]
-                        hover:bg-[#EDE8B8] hover:border-[#EDE8B8] active:scale-97 transition transform duration-150 ease-in-out">
-                                                    톡 보내기</button>
                                                 <button className="bg-[#FADD88] w-[230px] px-4 py-2 rounded-[10px]
                         hover:bg-[#E4C878] active:scale-97 transition transform duration-150 ease-in-out">
                                                     참여하기</button>
-                                            </div></>
+                                            </div>
+                                        </>
                                     )
                                     :
                                     (

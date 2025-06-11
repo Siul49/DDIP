@@ -2,73 +2,56 @@
 'use client'
 
 import { useEffect, useState, useRef } from "react";
-import io from "socket.io-client";
 
-let socket;
-
-export default function Chat({ onClose, name, roomId }) {
-    const [chatLog, setChatLog] = useState([]);
+export default function Chat({ onClose, name, roomId, userId, userNickname }) {
+    const [chatLog, setChatLog] = useState([
+        {
+            name: "트럼프",
+            text: "안녕하세요!",
+            time: "오후 2:00",
+            sender: "other"
+        },
+        {
+            name: "나",
+            text: "안녕하세요! 반가워요~",
+            time: "오후 2:01",
+            sender: "me"
+        }
+    ]);
     const [message, setMessage] = useState("");
-    const [isConnected, setIsConnected] = useState(false);
     const messagesEndRef = useRef(null);
 
-    // 소켓 연결 초기화
-    useEffect(() => {
-        const socketInitializer = async () => {
-            await fetch('/api/socket');
-            socket = io();
-
-            socket.on('connect', () => {
-                setIsConnected(true);
-                socket.emit('join-room', { roomId });
-            });
-
-            socket.on('new-message', (msg) => {
-                setChatLog(prev => [...prev, {
-                    text: msg.message,
-                    time: new Date().toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' }),
-                    sender: msg.user.id === socket.id ? "me" : "other",
-                    name: msg.user.nickname
-                }]);
-            });
-
-            socket.on('disconnect', () => setIsConnected(false));
-        };
-
-        socketInitializer();
-        return () => socket?.disconnect();
-    }, [roomId]);
-
-    // 메시지 전송 핸들러
-    const sendMessage = () => {
-        if (message.trim() && isConnected) {
-            socket.emit('send-message', {
-                roomId,
-                message: message.trim(),
-                user: {
-                    id: socket.id,
-                    nickname: name
-                }
-            });
-            setMessage("");
-        }
-    };
-
-    // 스크롤 최하단으로 이동
     useEffect(() => {
         messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
     }, [chatLog]);
 
+    const sendMessage = () => {
+        if (!message.trim()) return;
+        const now = new Date();
+        setChatLog(prev => [
+            ...prev,
+            {
+                name: userNickname,
+                text: message,
+                time: now.toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' }),
+                sender: "me"
+            }
+        ]);
+        setMessage("");
+    };
+
     return (
         <div className="fixed bottom-[20px] right-[80px] w-[350px] h-[550px] bg-white rounded-[20px] border-[2px] border-[#FEB162] z-100 flex flex-col">
-            {/* 기존 JSX 구조 유지 */}
+            {/* 상단 헤더 */}
             <div className="flex items-center h-[50px] px-[15px] border-b-[2px] border-[#FEB162] gap-[10px]">
-                <button onClick={onClose} className="w-[30px] h-[30px] mr-4 bg-[#FEB162] text-white rounded-full font-bold cursor-pointer">
+                <button
+                    onClick={onClose}
+                    className="w-[30px] h-[30px] mr-4 bg-[#FEB162] text-white rounded-full font-bold cursor-pointer"
+                >
                     ←
                 </button>
                 <p className="text-[20px] font-semibold truncate">{name}</p>
             </div>
-
             {/* 채팅 메시지 영역 */}
             <div className="flex-1 overflow-y-auto p-3 h-64 custom-scrollbar">
                 {chatLog.map((msg, idx) => (
@@ -93,7 +76,6 @@ export default function Chat({ onClose, name, roomId }) {
                 ))}
                 <div ref={messagesEndRef} />
             </div>
-
             {/* 메시지 입력 영역 */}
             <div className="flex justify-center items-center w-[320px] h-[40px] mb-[10px] gap-2 p-[5px]
                           rounded-[20px] border-[1px] border-[#D9D0D0] self-center">
@@ -103,13 +85,11 @@ export default function Chat({ onClose, name, roomId }) {
                     onChange={(e) => setMessage(e.target.value)}
                     onKeyDown={(e) => e.key === "Enter" && sendMessage()}
                     className="flex-1 px-2 text-sm focus:outline-none"
-                    placeholder={isConnected ? "메시지를 입력하세요." : "연결 중..."}
-                    disabled={!isConnected}
+                    placeholder="메시지를 입력하세요."
                 />
                 <button
                     onClick={sendMessage}
-                    className={`w-[30px] h-[30px] relative rounded-full ${isConnected ? "bg-[#FADD88]" : "bg-gray-300"} text-white font-bold cursor-pointer`}
-                    disabled={!isConnected}
+                    className="w-[30px] h-[30px] relative rounded-full bg-[#FADD88] text-white font-bold cursor-pointer"
                 >
                     →
                 </button>

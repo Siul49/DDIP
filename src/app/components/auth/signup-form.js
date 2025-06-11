@@ -5,6 +5,7 @@ import { validateEmail, validatePassword } from './validate';
 import Input from './input';
 import AgreementBox from './agreement';
 import Image from "next/image";
+import SignupModal from "./login-success-modal";
 
 export default function SignupForm({setStatus}) {
     const [agreed, setAgreed] = useState(false);

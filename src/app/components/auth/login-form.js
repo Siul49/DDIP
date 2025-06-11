@@ -7,7 +7,6 @@ import Image from "next/image";
 import { useRouter } from 'next/navigation';
 
 export default function LoginForm() {
-    const router = useRouter();
 
     const [form, setForm] = useState({
         userid: '',
@@ -26,7 +25,9 @@ export default function LoginForm() {
         if (!validatePassword(form.userpw)) {
             return setError('비밀번호는 8자 이상 입력해주세요');
         }
-
+        const closeModal = () => {
+                    setIsLoginSuccess(true);
+                };
         try {
             const response = await fetch('/api/auth/login', {
                 method: 'POST',
