@@ -1,6 +1,6 @@
 'use client';
 
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 import ConfirmModal from './post-confirm-modal';
 import WritingPage from './post-big';
 
@@ -8,7 +8,8 @@ export default function PostBox({ onClose }) {
     const [showConfirm, setShowConfirm] = useState(false);
     const [showFullPage, setShowFullPage] = useState(false);
     const [error, setError] = useState('');
-    const [user, setUser] = useState(null)
+    const [user, setUser] = useState(null);
+    const [preview, setPreview] = useState(null); // 이미지 미리보기 URL
     const [form, setForm] = useState({
         title: '',
         description: '',
@@ -16,12 +17,11 @@ export default function PostBox({ onClose }) {
         itemCategory: '',
         tradeType: '',
         totalNumberOfRecruits: 1,
-        numberOfRecruitedPersonnel:0,
+        numberOfRecruitedPersonnel: 0,
         totalPrice: 1,
         pricePerEachPerson: 1,
         image: null,
     });
-
 
     useEffect(() => {
         fetch('/api/auth/check')
@@ -31,7 +31,6 @@ export default function PostBox({ onClose }) {
             })
             .catch(error => console.error('유저 정보 불러오기 실패:', error));
     }, []);
-
 
     useEffect(() => {
         if (form.totalPrice > 0 && form.totalNumberOfRecruits > 0) {
@@ -43,7 +42,6 @@ export default function PostBox({ onClose }) {
         }
     }, [form.totalPrice, form.totalNumberOfRecruits]);
 
-    // input 값이 바뀔 때마다 form state 업데이트
     const handleChange = (e) => {
         const { name, value, type } = e.target;
         setForm((prev) => ({
@@ -52,15 +50,24 @@ export default function PostBox({ onClose }) {
         }));
     };
 
-    // 이미지 파일 따로 처리
     const handleImageChange = (e) => {
-        setForm((prev) => ({
-            ...prev,
-            image: e.target.files[0], // 실제 파일 객체 저장
-        }));
+        const file = e.target.files[0];
+        if (file) {
+            setForm(prev => ({
+                ...prev,
+                image: file
+            }));
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setPreview(reader.result);
+            };
+            reader.readAsDataURL(file);
+        } else {
+            setForm(prev => ({ ...prev, image: null }));
+            setPreview(null);
+        }
     };
 
-    // 등록 처리 함수 수정본
     const handleSubmit = async () => {
         setShowConfirm(false);
 
@@ -84,11 +91,11 @@ export default function PostBox({ onClose }) {
                         if (key === 'image') {
                             body.append(key, value, value.name);
                         } else {
-                            body.append(key, value.toString()); // 모든 값을 문자열로 변환
+                            body.append(key, value.toString());
                         }
                     }
                 });
-                headers = undefined;
+                headers = undefined; // Let fetch set it automatically for FormData
             } else {
                 body = JSON.stringify(payload);
                 headers = { 'Content-Type': 'application/json' };
@@ -96,7 +103,6 @@ export default function PostBox({ onClose }) {
 
             const response = await fetch('/api/post/write', { method: 'POST', headers, body });
 
-            // 응답이 JSON인지 확인
             const contentType = response.headers.get('content-type') || '';
             if (!contentType.includes('application/json')) {
                 const text = await response.text();
@@ -117,14 +123,11 @@ export default function PostBox({ onClose }) {
         }
     };
 
-
     const handleExpand = () => {
         setShowFullPage(true);
     };
 
-    if (showFullPage) {
-        return <WritingPage />;
-    }
+    if (showFullPage) return <WritingPage />;
 
     return (
         <div className="fixed top-0 left-0 w-full h-full z-100 flex justify-center items-center bg-black/50">
@@ -134,7 +137,7 @@ export default function PostBox({ onClose }) {
                     {/* 이미지 업로드 */}
                     <div className="flex items-center">
                         <label className="w-26 text-md font-semibold text-[#4D4D4D]">상품이미지</label>
-                        <div className={"w-full border border-[#E0E0E0] rounded-lg p-2 cursor-pointer"}>
+                        <div className="w-full border border-[#E0E0E0] rounded-lg p-2 cursor-pointer relative">
                             <a className="absolute text-[#4D4D4D] cursor-pointer">
                                 {form.image ? (
                                     <span className="ml-2 cursor-pointer">{form.image.name}</span>
@@ -144,11 +147,18 @@ export default function PostBox({ onClose }) {
                             </a>
                             <input
                                 type="file"
-                                className="w-full cursor-pointer opacity-0"
+                                className="w-full h-full absolute top-0 left-0 opacity-0 cursor-pointer"
                                 name="image"
                                 accept="image/*"
                                 onChange={handleImageChange}
                             />
+                            {preview && (
+                                <img
+                                    src={preview}
+                                    alt="첨부 이미지 미리보기"
+                                    className="w-40 h-40 object-contain mt-2"
+                                />
+                            )}
                         </div>
                     </div>
 
@@ -236,7 +246,7 @@ export default function PostBox({ onClose }) {
                     <div className="flex items-center">
                         <label className="w-26 text-md font-semibold text-[#4D4D4D] mb-20">상세설명</label>
                         <textarea
-                            placeholder={'구매시기, 거래 장소, 상품 분배 기준, 하자 여부 등 상품 설명을 자세히 작성해주세요. \n전화번호, SNS 계정 등 개인정보는 입력이 제한될 수 있어요.'}
+                            placeholder={'구매시기, 거래 장소, 상품 분배 기준, 하자 여부 등 상품 설명을 자세히 작성해주세요.\n전화번호, SNS 계정 등 개인정보는 입력이 제한될 수 있어요.'}
                             className="w-full border border-[#E0E0E0] rounded-lg p-2 h-32 resize-none"
                             name="description"
                             value={form.description}
@@ -254,12 +264,12 @@ export default function PostBox({ onClose }) {
                     </button>
                 </form>
 
-                {/* 에러 메시지 표시 */}
+                {/* 에러 메시지 */}
                 {error && (
                     <div className="text-red-500 mt-2">{error}</div>
                 )}
 
-                {/* 등록 확인 모달 */}
+                {/* 확인 모달 */}
                 {showConfirm && (
                     <ConfirmModal
                         onCancel={() => setShowConfirm(false)}

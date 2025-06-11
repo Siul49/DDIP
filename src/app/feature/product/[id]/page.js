@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import CategorySidebar from '@components/product/category-sidebar';
 import Image from "next/image";
 import {useParams, useRouter} from "next/navigation";
+import Nav from "@components/common/nav";
 
 
 export default function Product({ onSelect }) {
@@ -12,6 +13,8 @@ export default function Product({ onSelect }) {
     const [error, setError] = useState(null);
     const [user, setUser] = useState(null);
     const router = useRouter();
+    const [selectedCategory, setSelectedCategory] = useState('식재료');
+
 
     const pleaseLogin = ()=>{
         alert('로그인창으로 이동합니다')
@@ -48,22 +51,33 @@ export default function Product({ onSelect }) {
 
     return (
         <div className="flex justify-center">
+            <Nav />
             <main className="flex w-[1146px] h-full">
-                <CategorySidebar />
+
+                <CategorySidebar onSelect={setSelectedCategory} />
+
                 <div className="flex-1 ml-[30px]">
                     <section className="w-[950px] h-full mt-[190px] px-[20px] py-[40px]
             border-[1px] border-[#D9D9D9] rounded-[30px]">
                         <div className="flex gap-8 justify-center items-start">
                             {/* 좌측: 이미지 박스 */}
                             <div className="relative w-[320px] h-[320px] bg-[#FFF5DC] rounded-[20px] flex items-center justify-center">
-                                <Image
-                                    src="/placeholder.png" // 예시용 경로
-                                    alt="상품 이미지"
-                                    width={200}
-                                    height={200}
-                                    className="object-contain"
-                                />
+                                {item?.image && (
+                                    <div className="relative w-full h-full">
+                                        <Image
+                                            src={
+                                                typeof item.image === 'string'
+                                                    ? item.image
+                                                    : URL.createObjectURL(item.image)
+                                            }
+                                            alt="미리보기"
+                                            fill
+                                            className="object-contain p-4 rounded-[20px]"
+                                        />
+                                    </div>
+                                )}
                             </div>
+
 
                             {/* 우측: 상품 정보 */}
                             <div className="flex flex-col gap-[2px] w-[420px] ml-[10px] mt-[20px] text-left">

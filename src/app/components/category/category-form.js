@@ -18,9 +18,9 @@ export default function Category({onSelect}) {
             <div className={"relative top-8 w-[75%] h-56 grid grid-cols-6 gap-4 rounded-2xl"}>
                 {category_lists.map((item) => (
                     <button key={item.key} onClick={() => handleClick(item.name)}
-                            className="relative w-full h-full p-4 flex flex-col justify-center text-center">
-                        <div className={"absolute w-full h-[90%]"}>
-                            <Image src={`/categoryImg/${item.name}.png`}
+                            className="relative w-full h-full p-4 flex flex-col justify-center text-center aspect-square">
+                        <div className={"absolute w-full h-full"}>
+                            <Image src={`/categoryImg/${item.value}.png`}
                                    fill
                                    className=" w-full h-full bg-[#FFF5D8] hover:bg-[#FFC6B8] rounded-3xl p-4 object-contain select-transition mb-2"
                                    alt="이미지"/>

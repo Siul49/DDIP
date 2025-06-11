@@ -20,7 +20,6 @@ export default function Home() {
             <Nav />
             <Main />
             <Category onSelect={setSelectedCategory} />
-            <Shortcut />
         </div>
     );
 }

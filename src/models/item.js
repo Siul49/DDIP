@@ -10,6 +10,7 @@ const itemSchema = new mongoose.Schema({
     totalPrice: { type: Number, required: true },
     pricePerEachPerson: { type: Number, required: true },
     tradeType: { type: String, required: true },
+    image: { type: String, required: true },
     createdAt: { type: Date, default: Date.now }
 });
 
