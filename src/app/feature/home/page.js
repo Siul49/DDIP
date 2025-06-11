@@ -1,14 +1,15 @@
 import Image from "next/image";
+import Shortcut from "../shortcut/shortcut";
 
 
 export default function Main() {
 
     return (
         <div className={"flex flex-col w-full h-full bg-none justify-center text-center"}>
-
+            <Shortcut />
             <div className="relative top-0 w-full h-[80vh] bg-[url(/textured-paper.png)] flex justify-center">
                 <div className="absolute inset-0 bg-lime-500/30 mix-blend-multiply" />
-                <div className="absolute w-[50%] h-[40%] top-[20%]" >
+                <div className="absolute w-[32%] h-[30%] top-[42%]" >
                     <Image fill src="/DDIP.png" className={"object-contain"}  alt="사진이미지"/>
                 </div>
 

@@ -23,19 +23,19 @@ export default function Shortcut({}) {
         {user ? (
                 <>
                     <button
-                        className="fixed bottom-5 right-5 p-6 bg-[#FEB162] text-white rounded-full transition z-50
+                        className="fixed bottom-5 right-5 p-7 bg-[#FEB162] text-white rounded-full transition z-50
                 hover:bg-[#DE9142]"
                         onClick={toggleChat}
-                    ><Image src="/chat.png" fill alt="chat" className="object-contain p-2"/>
+                    ><Image src="/message_button.png" fill alt="chat" className="object-contain p-2"/>
                     </button>
                     {isCOpen && <ChatBox onClose={toggleChat} />}
 
                     <button
-                        className="fixed bottom-20 right-5 p-6 bg-[#FADD88] text-white rounded-full transition z-50
+                        className="fixed bottom-21 right-5 p-6 bg-[#FADD88] text-white rounded-full transition z-50
                 hover:bg-[#DABD78]"
                         onClick={togglePost}
                     >
-                        <Image src="/Write.png" fill alt="write" className="object-contain p-2"/>
+                        <Image src="/post-button.png" fill alt="write" className="object-contain p-2"/>
                     </button>
                     {isPOpen && <PostBox onClose={togglePost} />}
                 </>
@@ -48,10 +48,10 @@ export default function Shortcut({}) {
                     </button>
 
                     <button
-                        className="fixed bottom-20 right-5 p-6 bg-[#FADD88] text-white rounded-full transition z-50
+                        className="fixed bottom-21 right-5 p-7 bg-[#FADD88] text-white rounded-full transition z-50
                 hover:bg-[#DABD78]"
                     >
-                        <Image src="/Write.png" fill alt="write" className="object-contain p-2" onClick={() => alert('로그인을 해야 사용할 수 있는 기능입니다')}/>
+                        <Image src="/post_button.png" fill alt="write" className="object-contain p-2" onClick={() => alert('로그인을 해야 사용할 수 있는 기능입니다')}/>
                     </button>
                 </>
             )
