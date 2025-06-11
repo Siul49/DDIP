@@ -2,7 +2,6 @@
 
 import Category from '@components/category/category-form';
 import Main from './feature/home/page'
-import Footer from "@components/common/footer";
 import Nav from "@components/common/nav";
 import {useEffect, useState} from "react";
 import Shortcut from "./feature/shortcut/shortcut";
@@ -22,7 +21,6 @@ export default function Home() {
             <Main />
             <Category onSelect={setSelectedCategory} />
             <Shortcut />
-            <Footer />
         </div>
     );
 }

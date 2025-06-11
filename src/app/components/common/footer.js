@@ -3,8 +3,8 @@
 export default function Footer(){
 
     return (
-        <div className={'m- items-center bottom-0'}>
-            푸터
+        <div className={'m-20 items-center bottom-0'}>
+            @webprogramming_team3
         </div>
     )
 }
