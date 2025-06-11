@@ -16,7 +16,6 @@ export default function CategoryPage() {
             <div className="w-[80%] mx-auto">
                 <Category onSelect={setSelectedCategory} />
             </div>
-            <div className="h-50"/>
             <h1 className={"font-bold text-3xl"}>{selectedCategory}</h1>
             <ItemList category={selectedCategory} />
         </div>

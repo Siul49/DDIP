@@ -49,7 +49,7 @@ export default function Nav() {
                 </Link>
             )}
 
-            <div className="absolute w-12 h-12 right-5 bg-green-500 border-black border-4 rounded-full cursor-pointer"></div>
+            <Link href="/feature/mypage" className="absolute w-12 h-12 right-5 bg-green-500 border-black border-4 rounded-full cursor-pointer"></Link>
         </nav>
     )
 }

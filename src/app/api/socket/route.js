@@ -1,35 +1,46 @@
 import { Server } from "socket.io";
-import { getServerSession } from "next-auth/next";
-import { authOptions } from "../auth/[...nextauth]";
+import { decrypt } from '../../../lib/session';
 
-const rooms = new Map(); // 방 정보 저장
+const rooms = new Map();
 
 export default function handler(req, res) {
     if (req.method !== "POST") {
         return res.status(405).json({ error: "Method not allowed" });
     }
+
     if (!res.socket.server.io) {
         const io = new Server(res.socket.server, {
             path: "/api/socket.io",
-            addTrailingSlash: false
+            addTrailingSlash: false,
         });
 
         io.use(async (socket, next) => {
-            const session = await getServerSession(
-                socket.request,
-                { req: socket.request },
-                authOptions  // NextAuth 설정 가져오기
-            );
+            try {
+                const cookie = socket.request.headers.cookie;
+                if (!cookie) return next(new Error('인증 실패: 쿠키 없음'));
 
-            if (!session) return next(new Error('인증 실패'));
-            socket.user = session.user;
-            next();
+                const sessionCookie = cookie
+                    .split(';')
+                    .map(c => c.trim())
+                    .find(c => c.startsWith('session='));
+                if (!sessionCookie) return next(new Error('인증 실패: 세션 쿠키 없음'));
+
+                const sessionToken = decodeURIComponent(sessionCookie.split('=')[1]);
+                const session = await decrypt(sessionToken);
+
+                if (!session || !session.user) return next(new Error('인증 실패: 세션 유효하지 않음'));
+
+                socket.user = session.user;
+                next();
+            } catch (err) {
+                console.error('Socket 인증 에러:', err);
+                next(new Error('인증 실패'));
+            }
         });
 
         io.on("connection", (socket) => {
             console.log(`${socket.user.nickname} 연결됨`);
 
-            // 방 입장 처리
             socket.on('join-room', ({ roomId, max }) => {
                 const room = rooms.get(roomId) || { users: new Set(), max };
 
@@ -42,7 +53,6 @@ export default function handler(req, res) {
                 socket.join(roomId);
             });
 
-            // 메시지 전송
             socket.on('send-message', ({ roomId, message }) => {
                 io.to(roomId).emit('new-message', {
                     user: socket.user.nickname,
@@ -50,7 +60,6 @@ export default function handler(req, res) {
                 });
             });
 
-            // 연결 해제 시
             socket.on('disconnect', () => {
                 rooms.forEach((room, roomId) => {
                     if (room.users.has(socket.user.id)) {
