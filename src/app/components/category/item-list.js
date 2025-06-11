@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import {useRouter} from "next/navigation";
 
 
-export default function ItemList({ selectedCategory }) {
+export default function ItemList({ category }) {
     const [items, setItems] = useState([]);
     const [filteredItems, setFilteredItems] = useState([]);
     const router = useRouter();
@@ -23,23 +23,21 @@ export default function ItemList({ selectedCategory }) {
         fetchData();
     }, []);
 
-
     const handleClick = (id) => {
         router.push(`/feature/product/${id}`);
     };
     
     useEffect(() => {
-        const filteredItem = selectedCategory
-            ? items.filter(item => item.itemCategory === selectedCategory)
+        const filteredItem = category
+            ? items.filter(item => item.itemCategory === category)
             : items;
         setFilteredItems(filteredItem);
 
-    }, [selectedCategory, items])
+    }, [category, items])
     console.log('items:',items);
 
     return (
         <section className="relative w-full h-full flex justify-center text-center">
-
             <div className="absolute top-15 w-[65%] aspect-square grid grid-cols-4 grid-rows-4 rounded-2xl">
                 {filteredItems.map((item) => (
                     <button

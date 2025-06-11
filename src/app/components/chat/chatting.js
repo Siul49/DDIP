@@ -57,8 +57,8 @@ export default function Chatting({chatId, name, profileImg, onClose}) {
                         rounded-[20px] border-[2px] border-[#FEB162] z-100 flex flex-col">
             {/* 상단 */}
             <div className="flex items-center h-[50px] px-[15px] border-b-[2px] border-[#FEB162] gap-[10px]">
-                <button onClick={onClose} className="w-[20px] h-[20px] relative">
-                    <Image src="/chat-back.svg" fill alt="chat-back"/>
+                <button onClick={onClose} className="w-[30px] h-[30px] mr-4 bg-[#FEB162] text-white rounded-full font-bold cursor-pointer">
+                    ←
                 </button>
                 <p className="text-[20px] font-semibold truncate">{name}</p>
             </div>
@@ -108,8 +108,9 @@ export default function Chatting({chatId, name, profileImg, onClose}) {
                 />
                 <button
                     onClick={handleSend}
-                    className="w-[30px] h-[30px] relative"
-                ><Image src="/chat-send.svg" fill alt="chat-send"/>
+                    className="w-[30px] h-[30px] relative rounded-full bg-[#FADD88] text-white font-bold cursor-pointer"
+                >→
+                    <span className="absolute w-[50%] border-5-[3px] border-t-black"></span>
                 </button>
             </div>
         </div>
