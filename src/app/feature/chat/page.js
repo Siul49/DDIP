@@ -1,4 +1,7 @@
 // components/ChatList.js
+
+'use client'
+
 import { useState } from "react";
 import ChatMessage from "../../components/chat/chat-message";
 import Chat from "../../components/chat/chat";
