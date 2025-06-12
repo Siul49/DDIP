@@ -13,7 +13,7 @@ export default function Category({onSelect}) {
     };
 
     return (
-        <section className="relative w-full flex flex-col items-center justify-center mb-70">
+        <section className="relative w-full flex flex-col items-center justify-center mb-30">
             <h2 className="text-3xl font-bold mt-18">카테고리</h2>
             <div className={"relative top-8 w-[1146px] h-56 grid grid-cols-6 gap-4 rounded-2xl"}>
                 {category_lists.map((item) => (

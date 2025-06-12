@@ -14,7 +14,7 @@ body {
 
 .searchslot{
   @apply text-center rounded-full bg-[#FFFCED]
-  shadow-green-500 hover:shadow-xl
+  shadow-[#aaaa88] hover:shadow-lg
   transition-shadow duration-250 ease-out;
 }
 

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react';
-import { validateEmail, validatePassword } from './validate';
+import { validateEmail, validatePassword, validatePhoneNumber } from './validate';
 import Input from './input';
 import AgreementBox from './agreement';
 import Image from "next/image";
@@ -22,6 +22,7 @@ export default function SignupForm({setStatus}) {
 
 
     const [error, setError] = useState('');
+    const [isSuccess, setIsSuccess] = useState(false);
 
     const handleChange = (field) => (e) => {
         setForm((prev) => ({ ...prev, [field]: e.target.value }));
@@ -37,6 +38,7 @@ export default function SignupForm({setStatus}) {
 
         if (!validateEmail(form.email)) return setError('유효한 이메일을 입력해주세요');
         if (!validatePassword(form.userpw)) return setError('비밀번호는 8자 이상 입력해주세요');
+        if (!validatePhoneNumber(form.phone)) return setError('유효한 전화번호를 입력해주세요');
 
         setError('');
 
@@ -52,17 +54,31 @@ export default function SignupForm({setStatus}) {
 
         const result = await response.json();
 
+    //     if (result.success) {
+    //         alert(result.message);
+    //         setStatus(true);
+    //         if (typeof setStatus === 'function') {
+    //             setStatus(true);
+    //         }
+    //         location.reload();
+    //
+    //     } else {
+    //         alert(result.message);
+    //     }
+    // };
+
         if (result.success) {
-            alert(result.message);
-            setStatus(true);
+            setIsSuccess(true); // 모달 띄우기
             if (typeof setStatus === 'function') {
                 setStatus(true);
             }
-            location.reload();
-
         } else {
             alert(result.message);
         }
+    };
+
+    const closeModal = () => {
+        setIsSuccess(false);
     };
 
     return (
@@ -91,12 +107,14 @@ export default function SignupForm({setStatus}) {
             /><Input
                 label="비밀번호"
                 name="userpw"
+                type="password"
                 value={form.userpw}
                 onChange={handleChange('userpw')}
                 placeholder="비밀번호를 입력해주세요. (8자 이상)"
             /><Input
                 label="비밀번호 확인"
                 name="checkpw"
+                type="password"
                 value={form.checkpw}
                 onChange={handleChange('checkpw')}
                 placeholder="비밀번호를 입력해주세요. (8자 이상)"
@@ -137,6 +155,7 @@ export default function SignupForm({setStatus}) {
         cursor-pointer block">회원가입하기
                 </button>
             </form>
+            {isSuccess && <SignupModal message={'회원가입에 성공하셨어요!'} />}
         </div>
     )
 }

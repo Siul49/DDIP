@@ -5,6 +5,7 @@ import { validatePassword } from './validate';
 import Input from './input';
 import Image from "next/image";
 import { useRouter } from 'next/navigation';
+import LoginModal from "./login-success-modal";
 
 export default function LoginForm() {
 
@@ -12,7 +13,11 @@ export default function LoginForm() {
         userid: '',
         userpw: '',
     });
+
     const [error, setError] = useState('');
+
+    const [isLoginSuccess, setIsLoginSuccess] = useState(false);
+
     const handleChange = (field) => (e) => {
         setForm((prev) => ({ ...prev, [field]: e.target.value }));
     };
@@ -44,7 +49,7 @@ export default function LoginForm() {
                 alert('아주 심각한 에러입니다!');
                 alert('사실 에러 아니지롱 데헷😋');
                 alert(result.nickname + '님 환영합니다')
-                await router.push('/');
+                closeModal();
             } else {
                 setError(result.message || '로그인에 실패했습니다.');
             }
@@ -52,6 +57,8 @@ export default function LoginForm() {
             setError('로그인 요청 중 오류가 발생했습니다.');
         }
     };
+
+
 
     return (
         <div className="flex flex-col w-full justify-center items-center" style={{paddingTop: '35px'}}>
@@ -75,6 +82,7 @@ export default function LoginForm() {
                 <Input
                     label="비밀번호"
                     name="userpw"
+                    type="password"
                     value={form.userpw}
                     onChange={handleChange('userpw')}
                     placeholder="비밀번호를 입력해주세요. (8자 이상)"
@@ -88,6 +96,7 @@ export default function LoginForm() {
                     로그인하기
                 </button>
             </form>
+            {isLoginSuccess && <LoginModal message={'로그인 성공하셨어요!'} />}
         </div>
     );
 }
