@@ -65,19 +65,21 @@ export default function ProfileEdit({ user, setUser, onCancel }) {
         onCancel();
     };
 
+
     return (
         <div className="flex gap-[30px] justify-center items-start">
             {/*  왼쪽: 프로필 이미지 */}
             <div className="relative w-[185px] h-[200px] rounded-[20px] flex-col items-center justify-start">
-                {form.picture ? (
+                {form.image ? (
                     <Image
                         name="image"
-                        src= {form.picture}
+                        src={form.image}
                         alt="변경할 사진"
                         width={185}
                         height={185}
                         className="object-contain bg-[#FFF5DC] border-[#D9D9D9] border-[1px] rounded-[20px]"
-                    /> ) : (
+                    />
+                ) : (
                     <div className="w-[185px] h-[185px] bg-gray-200 rounded-[20px] flex items-center justify-center text-gray-500 text-sm">
                         이미지 없음
                     </div>
