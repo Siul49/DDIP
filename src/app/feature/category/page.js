@@ -12,11 +12,12 @@ export default function CategoryPage() {
     return(
         <div className={'relative w-full h-full flex flex-col justify-center bg-[#FFFCED] text-center'}>
             <Nav />
-            <div className="h-16"/>
-            <div className="w-[80%] mx-auto">
+            <div className="h-[100px]"/>
+            <div className="w-[1146px] mx-auto">
                 <Category onSelect={setSelectedCategory} />
             </div>
-            <h1 className={"font-bold text-3xl"}>{selectedCategory}</h1>
+
+            <h1 className={"font-bold text-[28px]"}>{selectedCategory}</h1>
             <ItemList category={selectedCategory} />
         </div>
     )

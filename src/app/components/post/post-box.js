@@ -35,18 +35,26 @@ export default function PostBox({ onClose }) {
     useEffect(() => {
         if (form.totalPrice > 0 && form.totalNumberOfRecruits > 0) {
             const calculatedPrice = form.totalPrice / form.totalNumberOfRecruits;
+            const roundedPrice = Math.round(calculatedPrice / 10) * 10;
+
             setForm(prev => ({
                 ...prev,
-                pricePerEachPerson: calculatedPrice
+                pricePerEachPerson: roundedPrice
             }));
         }
     }, [form.totalPrice, form.totalNumberOfRecruits]);
 
     const handleChange = (e) => {
         const { name, value, type } = e.target;
+        let newValue = type === 'number' ? Number(value) : value;
+
+        if (name === 'totalNumberOfRecruits' && newValue > 8) {
+            newValue = 8;
+        }
+
         setForm((prev) => ({
             ...prev,
-            [name]: type === 'number' ? Number(value) : value,
+            [name]: newValue,
         }));
     };
 

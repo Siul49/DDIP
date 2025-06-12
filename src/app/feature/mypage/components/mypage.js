@@ -2,12 +2,14 @@
 import Image from "next/image";
 import ProductManage from "./manage";
 import ProductWishList from "./wishlist";
+import ProfileEdit from "./profile-edit";
 import { useState, useEffect } from 'react';
 import Nav from "../../../components/common/nav";
 
 export default function MypageMain() {
     const [selected, setSelected] = useState('내 상품 관리');
     const [user, setUser] = useState('');
+    const [editMode, setEditMode] = useState(false);
 
     useEffect(() => {
         fetch('/api/auth/check')
@@ -20,20 +22,29 @@ export default function MypageMain() {
         <Nav/>
         <section className="w-[950px] mt-[190px] px-[20px] py-[40px]
             border-[1px] border-[#D9D9D9] rounded-[30px]">
-            <div className="flex gap-[30px] justify-center items-start">
-                {/* 좌측: 사진, 정보 수정 */}
-                <div className="relative w-[185px] h-[200px] rounded-[20px] flex-col items-center justify-start">
-                    <Image
-                        src="/placeholder.png"
-                        alt="상품 이미지"
-                        width={185}
-                        height={185}
-                        className="object-contain bg-[#FFF5DC] rounded-[20px]"
-                    />
+            {/* 이용자 정보 */}
+            {editMode ? (
+                <ProfileEdit
+                    user={user}
+                    setUser={setUser}
+                    onCancel={() => setEditMode(false)}
+                />
+            ) : (
+                    <div className="flex gap-[30px] justify-center items-start">
+                        {/* 좌측: 사진, 정보 수정 */}
+                        <div className="relative w-[185px] h-[200px] rounded-[20px] flex-col items-center justify-start">
+                            <Image
+                                src={user.image}
+                                alt="상품 이미지"
+                                width={185}
+                                height={185}
+                                className="object-contain bg-[#FFF5DC] rounded-[20px]"
+                            />
 
-                    <button className="w-[185px] h-[22px] border-[1px] border-[#D9D9D9] rounded-[10px] mt-[10px]
-                        text-[13px] text-[#888C85] text-regular">정보 수정하기</button>
-                </div>
+                            <button className="w-[185px] h-[22px] border-[1px] border-[#D9D9D9] rounded-[10px] mt-[10px]
+                                text-[13px] text-[#888C85] text-regular"
+                                    onClick={() => setEditMode(true)}>정보 수정하기</button>
+                        </div>
 
                         {/* 우측: 상품 정보 */}
                         <div className="flex flex-col gap-[2px] w-[520px] ml-[20px] mt-[20px] text-left">
