@@ -137,17 +137,10 @@ export default function PostBox({ onClose }) {
                     {/* 이미지 업로드 */}
                     <div className="flex items-center">
                         <label className="w-26 text-md font-semibold text-[#4D4D4D]">상품이미지</label>
-                        <div className="w-full border border-[#E0E0E0] rounded-lg p-2 cursor-pointer relative">
-                            <a className="absolute text-[#4D4D4D] cursor-pointer">
-                                {form.image ? (
-                                    <span className="ml-2 cursor-pointer">{form.image.name}</span>
-                                ) : (
-                                    "여기에 파일을 넣으세요."
-                                )}
-                            </a>
+                        <div className="min-w-50 min-h-10 border border-[#E0E0E0] rounded-lg p-2 cursor-pointer relative">
                             <input
                                 type="file"
-                                className="w-full h-full absolute top-0 left-0 opacity-0 cursor-pointer"
+                                className="w-full h-auto absolute top-0 left-0 opacity-0 cursor-pointer"
                                 name="image"
                                 accept="image/*"
                                 onChange={handleImageChange}
@@ -156,10 +149,17 @@ export default function PostBox({ onClose }) {
                                 <img
                                     src={preview}
                                     alt="첨부 이미지 미리보기"
-                                    className="w-40 h-40 object-contain mt-2"
+                                    className="w-40 h-40 object-contain mt-2 cursor-pointer"
                                 />
                             )}
                         </div>
+                        <a className="text-md font-semibold text-[#4D4D4D] opacity-60">
+                            {form.image ? (
+                                <span className="ml-2">{form.image.name}</span>
+                            ) : (
+                                "여기에 파일을 넣으세요."
+                            )}
+                        </a>
                     </div>
 
                     {/* 제목 */}
@@ -188,7 +188,7 @@ export default function PostBox({ onClose }) {
                                     value={form.totalPrice}
                                     onChange={handleChange}
                                 />
-                                <span className="text-[#4D4D4D]">원</span>
+                                <span className="text-[#4D4D4D] ml-1">원</span>
                             </div>
                         </div>
                         <div className="flex items-center w-1/2">
@@ -202,7 +202,7 @@ export default function PostBox({ onClose }) {
                                     value={form.totalNumberOfRecruits}
                                     onChange={handleChange}
                                 />
-                                <span className="text-[#4D4D4D]">명</span>
+                                <span className="text-[#4D4D4D] ml-1">명</span>
                             </div>
                         </div>
                     </div>
@@ -257,7 +257,8 @@ export default function PostBox({ onClose }) {
                     {/* 등록 버튼 */}
                     <button
                         type="button"
-                        className="w-[50%] h-12 bg-[#F5C24C] hover:bg-[#E5B33C] text-white text-lg font-bold py-2 rounded-3xl"
+                        className="w-[50%] h-12 bg-[#F5C24C] hover:bg-[#E5B33C] text-white text-lg font-bold py-2 rounded-3xl
+                                    ml-43"
                         onClick={() => setShowConfirm(true)}
                     >
                         등록하기

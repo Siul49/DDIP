@@ -29,8 +29,8 @@ export default function Nav() {
         transition-all duration-300 ${moving ? 'h-12 opacity-0 hover:h-20' : 'h-20 opacity-100 hover:shadow-2xl'}`}
         >
             <Link href="/" className="absolute w-32 left-3 text-center text-green-500 rounded-2xl cursor-pointer">
-                <div className="w-32 h-12 left-3">
-                    <Image src="/DDIP.png" fill alt="Home" className="object-contain" />
+                <div className="w-32 h-9 left-3">
+                    <Image src="/DDIP_yellow.png" fill alt="Home" className="object-contain" />
                 </div>
             </Link>
 
